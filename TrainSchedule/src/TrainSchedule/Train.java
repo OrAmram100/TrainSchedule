@@ -12,7 +12,7 @@ public class Train {
 			System.out.println("Welcome to israel railways.\n Choose one of the following options:");
 			System.out.println("1- Travel details\n 2-View travel details\n 9- exit");
 			choice = scan.nextInt();
-
+//sssssssssssssssssssssssssssssssssssssssssssssssssssssssss
 			switch (choice) {
 
 			case 1:
