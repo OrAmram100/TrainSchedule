@@ -1,7 +1,4 @@
-package TrainSchedule;
 
-import java.time.Clock;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Train {
@@ -60,12 +57,3 @@ public class Train {
 	
 	}
 }
-
-
-
-
-//	private static void sort(ArrayList<Integer> hours, ArrayList<Integer> minutes) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-//}
