@@ -68,7 +68,7 @@ public class Main {
 		Comparator<Railway> compareByTime = new Comparator<Railway>() {
 
 
-			public int compare(Railway o1, Railway o2) {   
+			public int compare(Railway o1, Railway o2) {    //התנאים למיון
 				if(o1.getLeaviningTime().getHour() <o2.getLeaviningTime().getHour() )
 					return -1;
 				else if(o1.getLeaviningTime().getHour() == o2.getLeaviningTime().getHour())	
