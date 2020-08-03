@@ -38,8 +38,8 @@ public class Railway {
 		}
 		@Override
 		public String toString() {
-			return "Railway [firstStaion=" + firstStaion + ", destiniationstatsion=" + destiniationstatsion
-					+ ", leaviningTime=" + leaviningTime + ", arrivalTime=" + arrivalTime  +"\n";
+			return "Railway: firstStaion=" + firstStaion + ", destiniationstatsion=" + destiniationstatsion
+					+ ", leaviningTime=" + leaviningTime + ", arrivalTime=" + arrivalTime  +". \n";
 		}
 		
 
