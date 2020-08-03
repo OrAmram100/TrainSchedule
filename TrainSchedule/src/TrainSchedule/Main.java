@@ -25,7 +25,7 @@ public class Main {
 
 			case 1:
 
-				System.out.println("please enter Starting station");
+				System.out.println("Please enter Starting station");
 				String station = scan.next();
 				System.out.println("Please enter leaving time");
 				scan.useDelimiter(":|\\s+");
