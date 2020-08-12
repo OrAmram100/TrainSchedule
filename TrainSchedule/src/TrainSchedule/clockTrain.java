@@ -18,18 +18,6 @@ public class clockTrain  {
 			minute = 0;
 	}
 
-	public String toString() {
-		String sb = new String();
-		if (hour < 10)
-			sb += "0" + hour + ":";
-		else
-			sb += hour + ":";
-		if (minute < 10)
-			sb += "0" + minute;
-		else
-			sb += minute;
-		return sb;
-	}
 
 	public int getHour() {
 		return hour;
@@ -49,4 +37,16 @@ public class clockTrain  {
 	        hour = 0;
 	    } 
 }
+	public String toString() {
+		String sb = new String();
+		if (hour < 10)
+			sb += "0" + hour + ":";
+		else
+			sb += hour + ":";
+		if (minute < 10)
+			sb += "0" + minute;
+		else
+			sb += minute;
+		return sb;
+	}
 }
