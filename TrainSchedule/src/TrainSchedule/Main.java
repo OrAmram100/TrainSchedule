@@ -76,12 +76,12 @@ public class Main {
 
 			case 2:
 				for(int i=0; i < allRides.size();i++)
-					allRides.get(i).showrailWays();
-				System.out.println(showrailWays(allRides));
+					allRides.get(i).sortStations();
+				System.out.println(sortRides(allRides));
 				break;
 
 			case 3:
-				
+				//&&allRides.get(i).getAllStaions().get(j).getName().equalsIgnoreCase(des)
 				System.out.println("Please enter starting station");
 				String station = scan.nextLine();
 				station+=scan.nextLine();
@@ -94,15 +94,18 @@ public class Main {
 				int m5 = scan.nextInt();
 				String sb = "";
 				for(int i=0; i < allRides.size();i++) {
-					for(int j=0; j < allRides.get(i).getAllStaions().size();j++) {
-						if(allRides.get(i).getAllStaions().get(j).getName().equalsIgnoreCase(station)
-								&&allRides.get(i).getDestiniationstatsion().equalsIgnoreCase(des)&&
-								allRides.get(i).getAllStaions().get(j).getLeaviningTime().getHour() >= h4)
-						{
-							sb+=allRides.get(i).getAllStaions().get(j)+"\n";
-
+					for(int startDes=0; startDes < allRides.get(i).getAllStaions().size();startDes++) {
+						if(allRides.get(i).getAllStaions().get(startDes).getName().equalsIgnoreCase(station)&&allRides.get(i).getAllStaions().get(startDes).getLeaviningTime().getHour() >= h4){
+							
+							for(int lastDes=startDes; lastDes < allRides.get(i).getAllStaions().size(); lastDes++) {
+								if(allRides.get(i).getAllStaions().get(lastDes).getName().equalsIgnoreCase(des)) {
+								
+									for(int midRide=startDes; midRide <= lastDes; midRide++) {
+										sb+=allRides.get(i).getAllStaions().get(midRide)+"\n";
+									}
+								}
+							}
 						}
-
 					}
 				}
 				if(!sb.equals(""))
@@ -125,7 +128,7 @@ public class Main {
 
 	}
 
-	private static String showrailWays(List<Ride> allRides) {
+	private static String sortRides(List<Ride> allRides) {
 		StringBuilder sb = new StringBuilder();
 
 		Comparator<Ride> compareByTime = new Comparator<Ride>() {

@@ -11,6 +11,7 @@ public class Ride {
 	private List<Station> allStaions;
 
 	public boolean addStation(Station newStation) {
+		
 		allStaions.add(newStation);
 		return true;
 	}
@@ -25,7 +26,7 @@ public class Ride {
 //			if(allStaions.get(i).getLeaviningTime().getHour())
 //		}
 //	}
-	public  void showrailWays() {
+	public  void sortStations() {
 		Comparator<Station> compareByTime = new Comparator<Station>() {
 
 			public int compare(Station o1, Station o2) { // conditions to sort
