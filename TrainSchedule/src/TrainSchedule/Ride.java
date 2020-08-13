@@ -21,11 +21,7 @@ public class Ride {
 		this.destiniation = destiniationstatsion;
 		this.allStaions = new ArrayList<Station>();
 	}
-//	public int getTimeOfStations() {
-//		for(int i=0; i<allStaions.size();i++ ) {
-//			if(allStaions.get(i).getLeaviningTime().getHour())
-//		}
-//	}
+
 	public  void sortStations() {
 		Comparator<Station> compareByTime = new Comparator<Station>() {
 
@@ -69,26 +65,23 @@ public class Ride {
 		return allStaions;
 	}
 
-
-
 	public void setAllStaions(List<Station> allStaions) {
 		this.allStaions = allStaions;
 	}
 
-
-
 	@Override
 	public String toString() {
-		StringBuffer sf = new StringBuffer();
-			sf.append(("the first station is " + allStaions.get(0).toString()));
-		sf.append("The final destination is " + destiniation + "\n");
-		if(allStaions.size()>1) {			
-			sf.append(" the intermediate station are:\n");	
-		for (int i = 1; i < allStaions.size(); i++) {
-			sf.append( i + "," + allStaions.get(i).toString() + "The final destination is " + destiniation + "\n"+ "\n <<<<<< \n ");			
+		StringBuffer schedule = new StringBuffer();
+		schedule.append("Origin station " + "name: " + allStaions.get(0).getName() + ", leavining Time: " + allStaions.get(0).getLeaviningTime() + ". \n");
+		schedule.append("Destination's  " + "name: " + allStaions.get(allStaions.size()-1).getName() + ", leavining Time: " + allStaions.get(allStaions.size()-1).getLeaviningTime() + ". \n\n");
+		if(allStaions.size()>1) {	// Intermediate stations check
+			schedule.append("Stop-stations on the way:\n");	
+			for (int i = 1; i < allStaions.size(); i++) {
+				schedule.append( i + ") " + allStaions.get(i).toString() + "The final stop is " + destiniation + ". \n");			
+			}
 		}
-		}
-		return sf.toString();
+		schedule.append("\n >>>>>>>>>>> \n");
+		return schedule.toString();
 	}
 }
 

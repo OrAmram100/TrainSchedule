@@ -37,7 +37,7 @@ public class Station {
 
 	@Override
 	public String toString() {
-		return "Station :name=" + name  + ", arrivalTime=" + arrivalTime + ", leaviningTime=" + leaviningTime + ".";
+		return "name: " + name  + ", arrival Time: " + arrivalTime + ", leavining Time: " + leaviningTime + ".";
 	}
 
 }
