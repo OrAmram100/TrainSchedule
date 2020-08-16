@@ -42,9 +42,9 @@ public class Main {
 				int DMin = scan.nextInt();
 				leaviningTime.add(new clockTrain(OHour, OHin));
 				destiniationTime.add(new clockTrain(DHour, DMin));
-				allRides.add(new Ride(Origin, destiniation,destiniationTime.get(numOfRides),leaviningTime.get(numOfRides)));
+				allRides.add(new Ride(Origin, destiniation,destiniationTime.get(numOfRides),leaviningTime.get(numsOfStations)));
 				Station newStation= new Station(Origin, leaviningTime.get(numsOfStations));
-				Station destinateStation = new Station(destiniation,destiniationTime.get(numsOfStations));		
+				Station destinateStation = new Station(destiniation,destiniationTime.get(numOfRides));		
 				allRides.get(numOfRides).addStation(newStation);
 				allRides.get(numOfRides).addStation(destinateStation);
 				scan.nextLine();
@@ -63,10 +63,9 @@ public class Main {
 					Station newInter = new Station(intermediate, leaviningTime.get(numsOfStations));
 					allRides.get(numOfRides).addStation(newInter);
 					scan.nextLine();
+					numsOfStations++;
 					System.out.println("would you like to add more intermediate station?");
 					interCheck =scan.next();
-					if(interCheck.equalsIgnoreCase("yes"))
-						numsOfStations++;
 				}
 				numOfRides++;
 				break;
@@ -114,7 +113,7 @@ public class Main {
 	}
 
 	private static String LocateRide(List<Ride> allRides,String des,String station, int SHour, int SMin) {
-		String route = "";
+		String route = ""; 
 		for(int i=0; i < allRides.size();i++) {
 			for(int startDes=0; startDes < allRides.get(i).getAllStaions().size();startDes++) {
 				if(allRides.get(i).getAllStaions().get(startDes).getName().equalsIgnoreCase(station)					//Compare name
@@ -123,6 +122,7 @@ public class Main {
 								&& allRides.get(i).getAllStaions().get(startDes).getLeaviningTime().getMinute() >= SMin))){ //Compare by minute
 					for(int lastDes=startDes; lastDes < allRides.get(i).getAllStaions().size(); lastDes++) {
 						if(allRides.get(i).getAllStaions().get(lastDes).getName().equalsIgnoreCase(des)){
+							route = "time arraving to : "  + allRides.get(i).getAllStaions().get(lastDes)+"\n";
 							for(int midRide=startDes; midRide <= lastDes; midRide++) {
 								route+=allRides.get(i).getAllStaions().get(midRide)+"\n"   ;								
 							}							
