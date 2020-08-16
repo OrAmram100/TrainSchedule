@@ -124,7 +124,7 @@ public class Main {
 							&& allRides.get(i).getAllStaions().get(startDes).getLeaviningTime().getMinute() >= SMin))){ //Compare by minute
 					for(int lastDes=startDes; lastDes < allRides.get(i).getAllStaions().size(); lastDes++) {
 						if(allRides.get(i).getAllStaions().get(lastDes).getName().equalsIgnoreCase(des)||
-								(allRides.get(i).getDestiniationstatsion().equalsIgnoreCase(des))){
+								(allRides.get(i).getDestiniationstatsion().equalsIgnoreCase(des))){							
 							for(int midRide=startDes; midRide <= lastDes; midRide++) {
 								route+=allRides.get(i).getAllStaions().get(midRide)+"\n"  ;
 							}
