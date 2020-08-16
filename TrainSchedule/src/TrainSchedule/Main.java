@@ -1,5 +1,6 @@
 package TrainSchedule;
 
+import java.security.AllPermission;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -122,9 +123,10 @@ public class Main {
 						|| 	(allRides.get(i).getAllStaions().get(startDes).getLeaviningTime().getHour() == SHour		
 							&& allRides.get(i).getAllStaions().get(startDes).getLeaviningTime().getMinute() >= SMin))){ //Compare by minute
 					for(int lastDes=startDes; lastDes < allRides.get(i).getAllStaions().size(); lastDes++) {
-						if(allRides.get(i).getAllStaions().get(lastDes).getName().equalsIgnoreCase(station)) {
+						if(allRides.get(i).getAllStaions().get(lastDes).getName().equalsIgnoreCase(des)||
+								(allRides.get(i).getDestiniationstatsion().equalsIgnoreCase(des))){							
 							for(int midRide=startDes; midRide <= lastDes; midRide++) {
-								route+=allRides.get(i).getAllStaions().get(midRide) + "\n the train will arive to your destnation on: " + allRides.get(i).getAllStaions().get(lastDes).getArrivalTime();  ;
+								route+=allRides.get(i).getAllStaions().get(midRide)+"\n"  ;
 							}
 						}
 					}
