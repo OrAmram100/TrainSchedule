@@ -8,6 +8,8 @@ import java.util.List;
 public class Ride {
 	private String firstStaion;
 	private String destiniation;
+	private clockTrain arrivalTime;
+	private clockTrain leaviningTime;
 	private List<Station> allStaions;
 
 	public boolean addStation(Station newStation) {
@@ -16,11 +18,39 @@ public class Ride {
 		return true;
 	}
 
-	public Ride(String firstStaion, String destiniationstatsion) {
+	
+	public Ride(String firstStaion, String destiniation, clockTrain arrivalTime, clockTrain leaviningTime) {
 		this.firstStaion = firstStaion;
-		this.destiniation = destiniationstatsion;
+		this.destiniation = destiniation;
+		this.arrivalTime = arrivalTime;
+		this.leaviningTime = leaviningTime;
 		this.allStaions = new ArrayList<Station>();
+
 	}
+	
+
+
+	
+
+	public clockTrain getArrivalTime() {
+		return arrivalTime;
+	}
+
+
+	public void setArrivalTime(clockTrain arrivalTime) {
+		this.arrivalTime = arrivalTime;
+	}
+
+
+	public clockTrain getLeaviningTime() {
+		return leaviningTime;
+	}
+
+
+	public void setLeaviningTime(clockTrain leaviningTime) {
+		this.leaviningTime = leaviningTime;
+	}
+
 
 	public  void sortStations() {
 		Comparator<Station> compareByTime = new Comparator<Station>() {
@@ -72,11 +102,11 @@ public class Ride {
 	@Override
 	public String toString() {
 		StringBuffer schedule = new StringBuffer();
-		schedule.append("Origin station " + "name: " + allStaions.get(0).getName() + ", leavining Time: " + allStaions.get(0).getLeaviningTime() + ". \n");
-		schedule.append("Destination's  " + "name: " + allStaions.get(allStaions.size()-1).getName() + ", leavining Time: " + allStaions.get(allStaions.size()-1).getLeaviningTime() + ". \n\n");
-		if(allStaions.size()>1) {	// Intermediate stations check
+		schedule.append("Origin station " + "name: " + firstStaion + ", leavining Time: " + getLeaviningTime() + ". \n");
+		schedule.append("Destination's  " + "name: " + destiniation + ", Arrival Time: " + getArrivalTime()+ ". \n\n");
+		if(allStaions.size()>2) {	// Intermediate stations check
 			schedule.append("Stop-stations on the way:\n");	
-			for (int i = 1; i < allStaions.size(); i++) {
+			for (int i = 1; i < allStaions.size()-1; i++) {
 				schedule.append( i + ") " + allStaions.get(i).toString() + "The final stop is " + destiniation + ". \n");			
 			}
 		}

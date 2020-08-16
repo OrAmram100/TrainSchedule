@@ -2,13 +2,11 @@ package TrainSchedule;
 
 public class Station {
 	private String name;
-	private clockTrain arrivalTime;
-	private clockTrain leaviningTime;
+	private clockTrain LeaviningTime;
 
-	public Station(String name, clockTrain leaviningTime, clockTrain arrivalTime) {
+	public Station(String name, clockTrain LeaviningTime) {
 		this.name = name;
-		this.leaviningTime = leaviningTime;
-		this.arrivalTime = arrivalTime;
+		this.LeaviningTime = LeaviningTime;
 	}
 	
 
@@ -22,24 +20,16 @@ public class Station {
 	}
 
 	public clockTrain getLeaviningTime() {
-		return leaviningTime;
+		return LeaviningTime;
 	}
 
 	public void setLeaviningTime(clockTrain leaviningTime) {
-		this.leaviningTime = leaviningTime;
-	}
-
-	public clockTrain getArrivalTime() {
-		return arrivalTime;
-	}
-
-	public void setArrivalTime(clockTrain arrivalTime) {
-		this.arrivalTime = arrivalTime;
+		this.LeaviningTime = leaviningTime;
 	}
 
 	@Override
 	public String toString() {
-		return "name: " + name  + ", arrival Time: " + arrivalTime + ", leavining Time: " + leaviningTime + ".";
+		return "name: " + name  + " , The time that the train need to come: " + LeaviningTime + ".";
 	}
 
 }

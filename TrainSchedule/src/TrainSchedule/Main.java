@@ -1,6 +1,5 @@
 package TrainSchedule;
 
-import java.security.AllPermission;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -43,9 +42,11 @@ public class Main {
 				int DMin = scan.nextInt();
 				leaviningTime.add(new clockTrain(OHour, OHin));
 				destiniationTime.add(new clockTrain(DHour, DMin));
-				Station newStation= new Station(Origin, leaviningTime.get(numsOfStations),destiniationTime.get(numsOfStations));
-				allRides.add(new Ride(Origin, destiniation));
+				allRides.add(new Ride(Origin, destiniation,destiniationTime.get(numOfRides),leaviningTime.get(numOfRides)));
+				Station newStation= new Station(Origin, leaviningTime.get(numsOfStations));
+				Station destinateStation = new Station(destiniation,destiniationTime.get(numsOfStations));		
 				allRides.get(numOfRides).addStation(newStation);
+				allRides.get(numOfRides).addStation(destinateStation);
 				scan.nextLine();
 				numsOfStations++;
 				System.out.println("Are there intermediate stop?");				
@@ -54,17 +55,12 @@ public class Main {
 					System.out.println("Please enter station's name");
 					String intermediate = scan.nextLine();
 					intermediate+=scan.nextLine();
-					System.out.println("Please enter train's arrival time");
-					scan.useDelimiter(":|\\s+");
-					int IAHour = scan.nextInt();
-					int IAMin = scan.nextInt();
 					System.out.println("Please enter train's leaving time");
 					scan.useDelimiter(":|\\s+");
 					int ILHour= scan.nextInt();
 					int ILMin = scan.nextInt();
 					leaviningTime.add(new clockTrain(ILHour, ILMin));
-					destiniationTime.add(new clockTrain(IAHour, IAMin));
-					Station newInter = new Station(intermediate, leaviningTime.get(numsOfStations),destiniationTime.get(numsOfStations));
+					Station newInter = new Station(intermediate, leaviningTime.get(numsOfStations));
 					allRides.get(numOfRides).addStation(newInter);
 					scan.nextLine();
 					System.out.println("would you like to add more intermediate station?");
@@ -84,6 +80,9 @@ public class Main {
 				break;
 
 			case 3://Plan trip
+				for(int i=0; i < allRides.size();i++) {
+					allRides.get(i).sortStations();
+				}
 				sortRides(allRides);
 				System.out.println("Please enter starting station");
 				String station = scan.nextLine();
@@ -96,7 +95,7 @@ public class Main {
 				int SMin = scan.nextInt();
 				String route = LocateRide(allRides, des, station, SHour, SMin);
 				if(!route.equals(""))
-				System.out.println("Station " + station + " --> Station " + des +"\n " + route );
+					System.out.println("Station " + station + " --> Station " + des +"\n " + route );
 				else
 					System.out.println("Sorry there is no rides for your request today!!");
 				break;
@@ -120,19 +119,23 @@ public class Main {
 			for(int startDes=0; startDes < allRides.get(i).getAllStaions().size();startDes++) {
 				if(allRides.get(i).getAllStaions().get(startDes).getName().equalsIgnoreCase(station)					//Compare name
 						&& (allRides.get(i).getAllStaions().get(startDes).getLeaviningTime().getHour() > SHour	 		//Compare by hour
-						|| 	(allRides.get(i).getAllStaions().get(startDes).getLeaviningTime().getHour() == SHour		
-							&& allRides.get(i).getAllStaions().get(startDes).getLeaviningTime().getMinute() >= SMin))){ //Compare by minute
+								|| 	(allRides.get(i).getAllStaions().get(startDes).getLeaviningTime().getHour() == SHour		
+								&& allRides.get(i).getAllStaions().get(startDes).getLeaviningTime().getMinute() >= SMin))){ //Compare by minute
 					for(int lastDes=startDes; lastDes < allRides.get(i).getAllStaions().size(); lastDes++) {
-						if(allRides.get(i).getAllStaions().get(lastDes).getName().equalsIgnoreCase(des)||
-								(allRides.get(i).getDestiniationstatsion().equalsIgnoreCase(des))){							
+						if(allRides.get(i).getAllStaions().get(lastDes).getName().equalsIgnoreCase(des)){
 							for(int midRide=startDes; midRide <= lastDes; midRide++) {
-								route+=allRides.get(i).getAllStaions().get(midRide)+"\n"  ;
-							}
+								route+=allRides.get(i).getAllStaions().get(midRide)+"\n"   ;								
+							}							
+							
 						}
 					}
 				}
+
 			}
+
 		}
+
+
 		return route;
 	}
 
@@ -146,7 +149,7 @@ public class Main {
 					return -1;
 				else if(o1.getAllStaions().get(0).getLeaviningTime().getMinute() ==o2.getAllStaions().get(0).getLeaviningTime().getMinute())
 					return 0;
-			return 1;
+				return 1;
 			}	
 		};
 		Collections.sort(allRides, compareByTime);
