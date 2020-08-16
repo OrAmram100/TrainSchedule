@@ -10,7 +10,9 @@ public class Station {
 		this.leaviningTime = leaviningTime;
 		this.arrivalTime = arrivalTime;
 	}
+	
 
+	
 	public String getName() {
 		return name;
 	}
