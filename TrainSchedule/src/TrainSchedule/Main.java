@@ -89,14 +89,13 @@ public class Main {
 				station+=scan.nextLine();
 				System.out.println("Please enter destiniation station");
 				String des = scan.nextLine();
-				des+=scan.nextLine();
 				System.out.println("Please enter leaving time");
 				scan.useDelimiter(":|\\s+");
 				int SHour= scan.nextInt();
 				int SMin = scan.nextInt();
 				String route = LocateRide(allRides, des, station, SHour, SMin);
 				if(!route.equals(""))
-				System.out.println("Station " + station + " --> Station " + des +"\n " + route  );
+				System.out.println("Station " + station + " --> Station " + des +"\n " + route );
 				else
 					System.out.println("Sorry there is no rides for your request today!!");
 				break;
@@ -120,12 +119,12 @@ public class Main {
 			for(int startDes=0; startDes < allRides.get(i).getAllStaions().size();startDes++) {
 				if(allRides.get(i).getAllStaions().get(startDes).getName().equalsIgnoreCase(station)					//Compare name
 						&& (allRides.get(i).getAllStaions().get(startDes).getLeaviningTime().getHour() > SHour	 		//Compare by hour
-						|| 	(allRides.get(i).getAllStaions().get(startDes).getLeaviningTime().getHour() == SHour		//Compare by minute
-							&& allRides.get(i).getAllStaions().get(startDes).getLeaviningTime().getMinute() >= SMin))){
+						|| 	(allRides.get(i).getAllStaions().get(startDes).getLeaviningTime().getHour() == SHour		
+							&& allRides.get(i).getAllStaions().get(startDes).getLeaviningTime().getMinute() >= SMin))){ //Compare by minute
 					for(int lastDes=startDes; lastDes < allRides.get(i).getAllStaions().size(); lastDes++) {
-						if(allRides.get(i).getAllStaions().get(lastDes).getName().equalsIgnoreCase(des)) {
+						if(allRides.get(i).getAllStaions().get(lastDes).getName().equalsIgnoreCase(station)) {
 							for(int midRide=startDes; midRide <= lastDes; midRide++) {
-								route+=allRides.get(i).getAllStaions().get(midRide)+"\n";
+								route+=allRides.get(i).getAllStaions().get(midRide) + "\n the train will arive to your destnation on: " + allRides.get(i).getAllStaions().get(lastDes).getArrivalTime();  ;
 							}
 						}
 					}
