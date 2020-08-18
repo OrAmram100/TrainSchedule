@@ -22,85 +22,42 @@ public class Main {
 		List<Ride> allRides = new ArrayList<Ride>();
 		List<clockTrain> destiniationTime = new ArrayList<clockTrain>();
 		do {
-			System.out.println("Welcome to Israel-RailWays!	 Menu: \n");
-			System.out.println(" 1) Enter today's train schedule \n 2) View travel details \n 3) Planning a train route \n 9) Exit");
+			System.out.println("Welcome to Israel-RailWays!\n");
+			System.out.println(" 1) Insert schedule \n 2) View today's Schedule \n 3) Plan your route \n 9) Exit");
 			choice = scan.nextInt();
 
 			switch (choice) {
 
 			case 1://Data insertion
 				
-				int doContinue = sFile.nextInt();
-				do {
-					sFile.nextLine();
-				System.out.println("Please enter your Origin station");
-				String Origin= sFile.nextLine();
-				System.out.println(Origin);
-				//Origin+=sFile.nextLine();
-				System.out.println("Please enter train's leaving time");
-				sFile.useDelimiter(":|\\s+");
-				int OHour = sFile.nextInt();
-				int OHin = sFile.nextInt();
-				System.out.println("Please enter Destination station");
-				String destiniation = sFile.nextLine();
-				destiniation+=sFile.nextLine();
-				System.out.println("Please enter Expected arrival time");
-				sFile.useDelimiter(":|\\s+");
-				int DHour = sFile.nextInt();
-				int DMin = sFile.nextInt();
-				leaviningTime.add(new clockTrain(OHour, OHin));
-				destiniationTime.add(new clockTrain(DHour, DMin));
-				allRides.add(new Ride(Origin, destiniation,destiniationTime.get(numOfRides),leaviningTime.get(numsOfStations)));
-				Station newStation= new Station(Origin, leaviningTime.get(numsOfStations));
-				Station destinateStation = new Station(destiniation,destiniationTime.get(numOfRides));		
-				allRides.get(numOfRides).addStation(newStation);
-				allRides.get(numOfRides).addStation(destinateStation);
-				sFile.nextLine();
-				numsOfStations++;
-				System.out.println("Are there intermediate stop?");				
-				String interCheck = sFile.next();
-				while(interCheck.equalsIgnoreCase("yes")) {
-					System.out.println("Please enter station's name");
-					String intermediate = sFile.nextLine();
-					intermediate+=sFile.nextLine();
-					System.out.println("Please enter train's leaving time");
-					sFile.useDelimiter(":|\\s+");
-					int ILHour= sFile.nextInt();
-					int ILMin = sFile.nextInt();
-					leaviningTime.add(new clockTrain(ILHour, ILMin));
-					Station newInter = new Station(intermediate, leaviningTime.get(numsOfStations));
-					allRides.get(numOfRides).addStation(newInter);
-					sFile.nextLine();
-					numsOfStations++;
-					System.out.println("would you like to add more intermediate station?");
-					interCheck =sFile.next();
+				System.out.println("Enter data via FILE / KEYBOARD?");
+				String port = scan.next();
+				if(port.equalsIgnoreCase("file")) {
+					DataInsertionViaFile(sFile, leaviningTime, destiniationTime, allRides, numOfRides, numsOfStations);
+				} else if(port.equalsIgnoreCase("keyboard")) {
+					DataInsertionViaKeyboard(scan, leaviningTime, destiniationTime, allRides, numOfRides, numsOfStations);
 				}
-				numOfRides++;
-				doContinue = sFile.nextInt();	
-				} while (doContinue == 1);
-				sFile.close();
 				break;
 
 			case 2://View schedule
+				
+				sortAll(allRides);
 				System.out.println("Israel-RailWays schedule: \n");
-				for(int i=0; i < allRides.size();i++) {
-					allRides.get(i).sortStations();
-				}
-				sortRides(allRides);
 				System.out.println(toStringRide(allRides));
 				break;
 
 			case 3://Plan trip
+				
 				for(int i=0; i < allRides.size();i++) {
 					allRides.get(i).sortStations();
 				}
 				sortRides(allRides);
-				System.out.println("Please enter starting station");
+				System.out.println("Enter starting station");
 				String station = scan.nextLine();
 				station+=scan.nextLine();
-				System.out.println("Please enter destiniation station");
+				System.out.println("Enter destiniation station");
 				String des = scan.nextLine();
-				System.out.println("Please enter leaving time");
+				System.out.println("Enter leaving time");
 				scan.useDelimiter(":|\\s+");
 				int SHour= scan.nextInt();
 				int SMin = scan.nextInt();
@@ -120,9 +77,107 @@ public class Main {
 				System.out.println("This choise does not exist in the menu"); // case choice is not valid
 				break;
 			}
-
+			scan.close();
+			sFile.close();
 		} while (ifContinue);
 
+	}
+
+	private static void sortAll(List<Ride> allRides) {
+		for(int i=0; i < allRides.size();i++) {
+			allRides.get(i).sortStations();
+		}
+		sortRides(allRides);		
+	}
+
+	private static void DataInsertionViaKeyboard(Scanner scan, List<clockTrain> leaviningTime, List<clockTrain> destiniationTime, List<Ride> allRides, int numOfRides, int numsOfStations) {
+		String doContinue;
+		do {
+		System.out.println("Enter your Origin station");
+		String Origin= scan.nextLine();
+		Origin+=scan.nextLine();
+		System.out.println("Enter train's leaving time");
+		scan.useDelimiter(":|\\s+");
+		int OHour = scan.nextInt();
+		int OMin = scan.nextInt();
+		System.out.println("Enter Destination station");
+		String destiniation = scan.nextLine();
+		destiniation+=scan.nextLine();
+		System.out.println("Enter Expected arrival time");
+		scan.useDelimiter(":|\\s+");
+		int DHour = scan.nextInt();
+		int DMin = scan.nextInt();
+		leaviningTime.add(new clockTrain(OHour, OMin));
+		destiniationTime.add(new clockTrain(DHour, DMin));
+		allRides.add(new Ride(Origin, destiniation,destiniationTime.get(numOfRides),leaviningTime.get(numsOfStations)));
+		Station newStation= new Station(Origin, leaviningTime.get(numsOfStations));
+		Station destinateStation = new Station(destiniation,destiniationTime.get(numOfRides));		
+		allRides.get(numOfRides).addStation(newStation);
+		allRides.get(numOfRides).addStation(destinateStation);
+		numsOfStations++;
+		System.out.println("Are there intermediate stop? (yes/no)");				
+		String interCheck = scan.next();
+		while(interCheck.equalsIgnoreCase("yes")) {
+			System.out.println("Enter station's name");
+			String intermediate = scan.nextLine();
+			intermediate+=scan.nextLine();
+			System.out.println("Enter train's leaving time");
+			scan.useDelimiter(":|\\s+");
+			int ILHour= scan.nextInt();
+			int ILMin = scan.nextInt();
+			leaviningTime.add(new clockTrain(ILHour, ILMin));
+			Station newInter = new Station(intermediate, leaviningTime.get(numsOfStations));
+			allRides.get(numOfRides).addStation(newInter);
+			numsOfStations++;
+			System.out.println("Would you like to add more intermediate station?");
+			interCheck =scan.next();
+		}
+		numOfRides++;
+		System.out.println("Would you like t0 add another RIDE? (yes/no)");
+		doContinue = scan.next();	
+		} while (doContinue.equalsIgnoreCase("yes"));
+	}
+
+	private static void DataInsertionViaFile(Scanner sFile, List<clockTrain> leaviningTime, List<clockTrain> destiniationTime, List<Ride> allRides, int numOfRides, int numsOfStations) {
+		int doContinue = sFile.nextInt();
+		do {
+			sFile.nextLine();
+		String Origin= sFile.nextLine();
+		sFile.useDelimiter(":|\\s+");
+		int OHour = sFile.nextInt();
+		int OMin = sFile.nextInt();
+		String destiniation = sFile.nextLine();
+		destiniation+=sFile.nextLine();
+		sFile.useDelimiter(":|\\s+");
+		int DHour = sFile.nextInt();
+		int DMin = sFile.nextInt();
+		leaviningTime.add(new clockTrain(OHour, OMin));
+		destiniationTime.add(new clockTrain(DHour, DMin));
+		allRides.add(new Ride(Origin, destiniation,destiniationTime.get(numOfRides),leaviningTime.get(numsOfStations)));
+		Station newStation= new Station(Origin, leaviningTime.get(numsOfStations));
+		Station destinateStation = new Station(destiniation,destiniationTime.get(numOfRides));		
+		allRides.get(numOfRides).addStation(newStation);
+		allRides.get(numOfRides).addStation(destinateStation);
+		sFile.nextLine();
+		numsOfStations++;
+		String interCheck = sFile.next();
+		while(interCheck.equalsIgnoreCase("yes")) {
+			String intermediate = sFile.nextLine();
+			intermediate+=sFile.nextLine();
+			sFile.useDelimiter(":|\\s+");
+			int ILHour= sFile.nextInt();
+			int ILMin = sFile.nextInt();
+			leaviningTime.add(new clockTrain(ILHour, ILMin));
+			Station newInter = new Station(intermediate, leaviningTime.get(numsOfStations));
+			allRides.get(numOfRides).addStation(newInter);
+			sFile.nextLine();
+			numsOfStations++;
+			interCheck =sFile.next();
+		}
+		numOfRides++;
+		doContinue = sFile.nextInt();	
+		} while (doContinue == 1);
+		System.out.println("Data insertion completed successfully. \n\n");
 	}
 
 	private static String LocateRide(List<Ride> allRides,String des,String station, int SHour, int SMin) {
@@ -138,16 +193,11 @@ public class Main {
 							for(int midRide=startDes; midRide <= lastDes; midRide++) {
 								route+=allRides.get(i).getAllStaions().get(midRide)+"\n"   ;								
 							}							
-							
 						}
 					}
 				}
-
 			}
-
 		}
-
-
 		return route;
 	}
 
@@ -160,7 +210,7 @@ public class Main {
 	}
 
 
-private static List sortRides(List<Ride> allRides) {
+private static List<Ride> sortRides(List<Ride> allRides) {
 	Comparator<Ride> compareByTime = new Comparator<Ride>() {
 		public int compare(Ride o1, Ride o2) {
 			if(o1.getAllStaions().get(0).getLeaviningTime().getHour() < o2.getAllStaions().get(0).getLeaviningTime().getHour() 				//Compare by hour
