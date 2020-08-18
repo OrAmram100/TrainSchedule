@@ -28,10 +28,6 @@ public class Ride {
 
 	}
 	
-
-
-	
-
 	public clockTrain getArrivalTime() {
 		return arrivalTime;
 	}

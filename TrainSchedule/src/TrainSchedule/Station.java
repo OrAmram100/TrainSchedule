@@ -9,8 +9,6 @@ public class Station {
 		this.LeaviningTime = LeaviningTime;
 	}
 	
-
-	
 	public String getName() {
 		return name;
 	}

@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-
+ 
 	public static void main(String[] args) throws FileNotFoundException {
 		File file = new File("C:\\Users\\Administrator\\git\\TrainSchedule\\TrainSchedule\\src\\TrainSchedule\\TrainSchedule.txt");
 		Scanner sFile = new Scanner(file);
@@ -135,7 +135,6 @@ public class Main {
 								&& allRides.get(i).getAllStaions().get(startDes).getLeaviningTime().getMinute() >= SMin))){ //Compare by minute
 					for(int lastDes=startDes; lastDes < allRides.get(i).getAllStaions().size(); lastDes++) {
 						if(allRides.get(i).getAllStaions().get(lastDes).getName().equalsIgnoreCase(des)){
-							//route = " "  + allRides.get(i).getAllStaions().get(lastDes)+"\n";
 							for(int midRide=startDes; midRide <= lastDes; midRide++) {
 								route+=allRides.get(i).getAllStaions().get(midRide)+"\n"   ;								
 							}							
