@@ -98,15 +98,14 @@ public class Ride {
 	@Override
 	public String toString() {
 		StringBuffer schedule = new StringBuffer();
-		schedule.append("Origin station " + "name: " + firstStaion + ", leavining Time: " + getLeaviningTime() + ". \n");
-		schedule.append("Destination's  " + "name: " + destiniation + ", Arrival Time: " + getArrivalTime()+ ". \n\n");
+		schedule.append("Origin: " + firstStaion + " - " + getLeaviningTime() + ". \n");
 		if(allStaions.size()>2) {	// Intermediate stations check
-			schedule.append("Stop-stations on the way:\n");	
 			for (int i = 1; i < allStaions.size()-1; i++) {
-				schedule.append( i + ") " + allStaions.get(i).toString() + "\n");			
+				schedule.append(allStaions.get(i).toString() + "\n");			
 			}
+			schedule.append("Destination: " + destiniation + " - " + getArrivalTime()+ ".\n");
 		}
-		schedule.append("\n >>>>>>>>>>> \n");
+		schedule.append("\n >>>>>>>>>>> \n\n");
 		return schedule.toString();
 	}
 }
