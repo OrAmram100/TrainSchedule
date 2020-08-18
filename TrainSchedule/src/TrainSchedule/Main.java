@@ -1,5 +1,7 @@
 package TrainSchedule;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -8,7 +10,9 @@ import java.util.Scanner;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
+		File file = new File("C:\\Users\\Administrator\\git\\TrainSchedule\\TrainSchedule\\src\\TrainSchedule\\TrainSchedule.txt");
+		Scanner sFile = new Scanner(file);
 		Scanner scan = new Scanner(System.in);
 		int numOfRides = 0;
 		int numsOfStations =0;
@@ -20,26 +24,27 @@ public class Main {
 		do {
 			System.out.println("Welcome to Israel-RailWays!	 Menu: \n");
 			System.out.println(" 1) Enter today's train schedule \n 2) View travel details \n 3) Planning a train route \n 9) Exit");
-			choice = scan.nextInt();
+			choice = sFile.nextInt();
 
 			switch (choice) {
 
 			case 1://Data insertion
 
 				System.out.println("Please enter your Origin station");
-				String Origin= scan.nextLine();
-				Origin+=scan.nextLine();
+				String Origin= sFile.nextLine();
+				System.out.println(Origin);
+				Origin+=sFile.nextLine();
 				System.out.println("Please enter train's leaving time");
-				scan.useDelimiter(":|\\s+");
-				int OHour = scan.nextInt();
-				int OHin = scan.nextInt();
+				sFile.useDelimiter(":|\\s+");
+				int OHour = sFile.nextInt();
+				int OHin = sFile.nextInt();
 				System.out.println("Please enter Destination station");
-				String destiniation = scan.nextLine();
-				destiniation+=scan.nextLine();
+				String destiniation = sFile.nextLine();
+				destiniation+=sFile.nextLine();
 				System.out.println("Please enter Expected arrival time");
-				scan.useDelimiter(":|\\s+");
-				int DHour = scan.nextInt();
-				int DMin = scan.nextInt();
+				sFile.useDelimiter(":|\\s+");
+				int DHour = sFile.nextInt();
+				int DMin = sFile.nextInt();
 				leaviningTime.add(new clockTrain(OHour, OHin));
 				destiniationTime.add(new clockTrain(DHour, DMin));
 				allRides.add(new Ride(Origin, destiniation,destiniationTime.get(numOfRides),leaviningTime.get(numsOfStations)));
@@ -47,25 +52,25 @@ public class Main {
 				Station destinateStation = new Station(destiniation,destiniationTime.get(numOfRides));		
 				allRides.get(numOfRides).addStation(newStation);
 				allRides.get(numOfRides).addStation(destinateStation);
-				scan.nextLine();
+				sFile.nextLine();
 				numsOfStations++;
 				System.out.println("Are there intermediate stop?");				
-				String interCheck = scan.next();
+				String interCheck = sFile.next();
 				while(interCheck.equalsIgnoreCase("yes")) {
 					System.out.println("Please enter station's name");
-					String intermediate = scan.nextLine();
-					intermediate+=scan.nextLine();
+					String intermediate = sFile.nextLine();
+					intermediate+=sFile.nextLine();
 					System.out.println("Please enter train's leaving time");
-					scan.useDelimiter(":|\\s+");
-					int ILHour= scan.nextInt();
-					int ILMin = scan.nextInt();
+					sFile.useDelimiter(":|\\s+");
+					int ILHour= sFile.nextInt();
+					int ILMin = sFile.nextInt();
 					leaviningTime.add(new clockTrain(ILHour, ILMin));
 					Station newInter = new Station(intermediate, leaviningTime.get(numsOfStations));
 					allRides.get(numOfRides).addStation(newInter);
-					scan.nextLine();
+					sFile.nextLine();
 					numsOfStations++;
 					System.out.println("would you like to add more intermediate station?");
-					interCheck =scan.next();
+					interCheck =sFile.next();
 				}
 				numOfRides++;
 				break;
@@ -108,6 +113,7 @@ public class Main {
 				System.out.println("This choise does not exist in the menu"); // case choice is not valid
 				break;
 			}
+
 		} while (ifContinue);
 
 	}
