@@ -29,7 +29,7 @@ public class Station {
 
 	@Override
 	public String toString() {
-		return "name: " + name  + " , The time that the train need to come: " + LeaviningTime + ".";
+		return name  + " - " + LeaviningTime + ".";
 	}
 
 }

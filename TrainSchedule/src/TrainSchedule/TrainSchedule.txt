@@ -22,3 +22,22 @@ yes
 Shoham
 9:40
 no
+1
+Modiin
+05:40
+Kriat Gat
+09:04
+yes
+Lod
+06:14
+yes
+Ramle
+06:55
+yes
+Ashdod
+08:30
+yes
+Rehovot
+08:49
+no
+99999
