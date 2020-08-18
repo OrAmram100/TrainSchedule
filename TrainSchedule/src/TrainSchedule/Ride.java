@@ -28,10 +28,6 @@ public class Ride {
 
 	}
 	
-
-
-	
-
 	public clockTrain getArrivalTime() {
 		return arrivalTime;
 	}
@@ -107,7 +103,7 @@ public class Ride {
 		if(allStaions.size()>2) {	// Intermediate stations check
 			schedule.append("Stop-stations on the way:\n");	
 			for (int i = 1; i < allStaions.size()-1; i++) {
-				schedule.append( i + ") " + allStaions.get(i).toString() + "The final stop is " + destiniation + ". \n");			
+				schedule.append( i + ") " + allStaions.get(i).toString() + "\n");			
 			}
 		}
 		schedule.append("\n >>>>>>>>>>> \n");

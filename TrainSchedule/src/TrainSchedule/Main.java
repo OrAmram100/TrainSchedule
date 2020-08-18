@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-
+ 
 	public static void main(String[] args) throws FileNotFoundException {
 		File file = new File("C:\\Users\\Administrator\\git\\TrainSchedule\\TrainSchedule\\src\\TrainSchedule\\TrainSchedule.txt");
 		Scanner sFile = new Scanner(file);
@@ -24,16 +24,19 @@ public class Main {
 		do {
 			System.out.println("Welcome to Israel-RailWays!	 Menu: \n");
 			System.out.println(" 1) Enter today's train schedule \n 2) View travel details \n 3) Planning a train route \n 9) Exit");
-			choice = sFile.nextInt();
+			choice = scan.nextInt();
 
 			switch (choice) {
 
 			case 1://Data insertion
-
+				
+				int doContinue = sFile.nextInt();
+				do {
+					sFile.nextLine();
 				System.out.println("Please enter your Origin station");
 				String Origin= sFile.nextLine();
 				System.out.println(Origin);
-				Origin+=sFile.nextLine();
+				//Origin+=sFile.nextLine();
 				System.out.println("Please enter train's leaving time");
 				sFile.useDelimiter(":|\\s+");
 				int OHour = sFile.nextInt();
@@ -73,6 +76,9 @@ public class Main {
 					interCheck =sFile.next();
 				}
 				numOfRides++;
+				doContinue = sFile.nextInt();	
+				} while (doContinue == 1);
+				sFile.close();
 				break;
 
 			case 2://View schedule
@@ -80,7 +86,8 @@ public class Main {
 				for(int i=0; i < allRides.size();i++) {
 					allRides.get(i).sortStations();
 				}
-				System.out.println(sortRides(allRides));
+				sortRides(allRides);
+				System.out.println(toStringRide(allRides));
 				break;
 
 			case 3://Plan trip
@@ -99,7 +106,7 @@ public class Main {
 				int SMin = scan.nextInt();
 				String route = LocateRide(allRides, des, station, SHour, SMin);
 				if(!route.equals(""))
-					System.out.println("Station " + station + " --> Station " + des +"\n " + route );
+					System.out.println("Station " + station + " --> Station " + des +"\n" + route );
 				else
 					System.out.println("Sorry there is no rides for your request today!!");
 				break;
@@ -128,7 +135,6 @@ public class Main {
 								&& allRides.get(i).getAllStaions().get(startDes).getLeaviningTime().getMinute() >= SMin))){ //Compare by minute
 					for(int lastDes=startDes; lastDes < allRides.get(i).getAllStaions().size(); lastDes++) {
 						if(allRides.get(i).getAllStaions().get(lastDes).getName().equalsIgnoreCase(des)){
-							route = "time arraving to : "  + allRides.get(i).getAllStaions().get(lastDes)+"\n";
 							for(int midRide=startDes; midRide <= lastDes; midRide++) {
 								route+=allRides.get(i).getAllStaions().get(midRide)+"\n"   ;								
 							}							
@@ -145,28 +151,32 @@ public class Main {
 		return route;
 	}
 
-	private static String sortRides(List<Ride> allRides) {
+	private static String toStringRide(List<Ride> allRides) {
 		StringBuilder sb = new StringBuilder();
-		Comparator<Ride> compareByTime = new Comparator<Ride>() {
-			public int compare(Ride o1, Ride o2) {
-				if(o1.getAllStaions().get(0).getLeaviningTime().getHour() < o2.getAllStaions().get(0).getLeaviningTime().getHour() 				//Compare by hour
-						|| (o1.getAllStaions().get(0).getLeaviningTime().getHour() == o2.getAllStaions().get(0).getLeaviningTime().getHour()	//Compare by minute
-						&& o1.getAllStaions().get(0).getLeaviningTime().getMinute() < o2.getAllStaions().get(0).getLeaviningTime().getMinute()))
-					return -1;
-				else if(o1.getAllStaions().get(0).getLeaviningTime().getMinute() ==o2.getAllStaions().get(0).getLeaviningTime().getMinute())
-					return 0;
-				return 1;
-			}	
-		};
-		Collections.sort(allRides, compareByTime);
 		for(int i=0; i < allRides.size();i++) {
 			sb.append(( allRides.get(i).toString()));
 		}
 		return sb.toString();
 	}
 
-}
 
+private static List sortRides(List<Ride> allRides) {
+	Comparator<Ride> compareByTime = new Comparator<Ride>() {
+		public int compare(Ride o1, Ride o2) {
+			if(o1.getAllStaions().get(0).getLeaviningTime().getHour() < o2.getAllStaions().get(0).getLeaviningTime().getHour() 				//Compare by hour
+					|| (o1.getAllStaions().get(0).getLeaviningTime().getHour() == o2.getAllStaions().get(0).getLeaviningTime().getHour()	//Compare by minute
+					&& o1.getAllStaions().get(0).getLeaviningTime().getMinute() < o2.getAllStaions().get(0).getLeaviningTime().getMinute()))
+				return -1;
+			else if(o1.getAllStaions().get(0).getLeaviningTime().getMinute() ==o2.getAllStaions().get(0).getLeaviningTime().getMinute())
+				return 0;
+			return 1;
+		}	
+	};
+	Collections.sort(allRides, compareByTime);
+	
+	return allRides;
+}
+}
 
 
 
