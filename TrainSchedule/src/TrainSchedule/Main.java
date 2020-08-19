@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Main {
  
 	public static void main(String[] args) throws FileNotFoundException {
-		File file = new File("C:\\Users\\Administrator\\git\\TrainSchedule\\TrainSchedule\\src\\TrainSchedule\\TrainSchedule.txt");
+		File file = new File("C:\\Users\\oramr\\git\\TrainSchedule\\TrainSchedule\\src\\TrainSchedule\\TrainSchedule.txt");
 		Scanner sFile = new Scanner(file);
 		Scanner scan = new Scanner(System.in);
 		int numOfRides = 0;
