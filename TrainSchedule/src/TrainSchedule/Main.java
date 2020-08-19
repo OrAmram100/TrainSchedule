@@ -9,13 +9,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
- 
+	
 	public static void main(String[] args) throws FileNotFoundException {
-		File file = new File("C:\\Users\\Administrator\\git\\TrainSchedule\\TrainSchedule\\src\\TrainSchedule\\TrainSchedule.txt");
+		File file = new File("C:\\Users\\oramr\\git\\TrainSchedule\\TrainSchedule\\src\\TrainSchedule\\TrainSchedule.txt");
 		Scanner sFile = new Scanner(file);
 		Scanner scan = new Scanner(System.in);
 		int numOfRides = 0;
-		int numsOfStations =0;
+		 int numsOfStations =0;
 		int choice;
 		boolean ifContinue = true;
 		List<clockTrain> leaviningTime = new ArrayList<clockTrain>();
@@ -71,14 +71,15 @@ public class Main {
 			case 9: // Exit
 				System.out.println("Exit.\nThank you for using.\nhave a great day !");
 				ifContinue = false;
+				scan.close();
+				sFile.close();
 				break;
 
 			default:
 				System.out.println("This choise does not exist in the menu"); // case choice is not valid
 				break;
 			}
-			scan.close();
-			sFile.close();
+			
 		} while (ifContinue);
 
 	}
@@ -133,12 +134,13 @@ public class Main {
 			interCheck =scan.next();
 		}
 		numOfRides++;
-		System.out.println("Would you like t0 add another RIDE? (yes/no)");
+		System.out.println("Would you like to add another RIDE? (yes/no)");
 		doContinue = scan.next();	
 		} while (doContinue.equalsIgnoreCase("yes"));
 	}
 
 	private static void DataInsertionViaFile(Scanner sFile, List<clockTrain> leaviningTime, List<clockTrain> destiniationTime, List<Ride> allRides, int numOfRides, int numsOfStations) {
+		
 		int doContinue = sFile.nextInt();
 		do {
 			sFile.nextLine();
@@ -190,6 +192,7 @@ public class Main {
 								&& allRides.get(i).getAllStaions().get(startDes).getLeaviningTime().getMinute() >= SMin))){ //Compare by minute
 					for(int lastDes=startDes; lastDes < allRides.get(i).getAllStaions().size(); lastDes++) {
 						if(allRides.get(i).getAllStaions().get(lastDes).getName().equalsIgnoreCase(des)){
+							route = "The train will arraive to the destination at :" + allRides.get(i).getAllStaions().get(lastDes).getLeaviningTime() +"\n";
 							for(int midRide=startDes; midRide <= lastDes; midRide++) {
 								route+=allRides.get(i).getAllStaions().get(midRide)+"\n"   ;								
 							}							
