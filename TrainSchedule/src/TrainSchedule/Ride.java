@@ -13,12 +13,12 @@ public class Ride {
 	private List<Station> allStaions;
 
 	public boolean addStation(Station newStation) {
-		
+
 		allStaions.add(newStation);
 		return true;
 	}
 
-	
+
 	public Ride(String firstStaion, String destiniation, clockTrain arrivalTime, clockTrain leaviningTime) {
 		this.firstStaion = firstStaion;
 		this.destiniation = destiniation;
@@ -27,7 +27,7 @@ public class Ride {
 		this.allStaions = new ArrayList<Station>();
 
 	}
-	
+
 	public clockTrain getArrivalTime() {
 		return arrivalTime;
 	}
@@ -100,7 +100,12 @@ public class Ride {
 		StringBuffer schedule = new StringBuffer();
 		schedule.append("Origin: " + firstStaion + " - " + getLeaviningTime() + ". \n");
 		if(allStaions.size()>2) {	// Intermediate stations check
+			if(allStaions.size()==3)
+				schedule.append("Stop-station on the way:\n");	
+			else
+				schedule.append("Stop-stations on the way:\n");
 			for (int i = 1; i < allStaions.size()-1; i++) {
+
 				schedule.append(allStaions.get(i).toString() + "\n");			
 			}
 			schedule.append("Destination: " + destiniation + " - " + getArrivalTime()+ ".\n");
