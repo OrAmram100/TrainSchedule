@@ -1,5 +1,6 @@
 package TrainSchedule;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -18,7 +19,6 @@ public class Ride {
 		return true;
 	}
 
-
 	public Ride(String firstStaion, String destiniation, clockTrain arrivalTime, clockTrain leaviningTime) {
 		this.firstStaion = firstStaion;
 		this.destiniation = destiniation;
@@ -32,23 +32,19 @@ public class Ride {
 		return arrivalTime;
 	}
 
-
 	public void setArrivalTime(clockTrain arrivalTime) {
 		this.arrivalTime = arrivalTime;
 	}
-
 
 	public clockTrain getLeaviningTime() {
 		return leaviningTime;
 	}
 
-
 	public void setLeaviningTime(clockTrain leaviningTime) {
 		this.leaviningTime = leaviningTime;
 	}
 
-
-	public  void sortStations() {
+	public void sortStations() {
 		Comparator<Station> compareByTime = new Comparator<Station>() {
 
 			public int compare(Station o1, Station o2) { // conditions to sort
@@ -64,6 +60,7 @@ public class Ride {
 		};
 		Collections.sort(allStaions, compareByTime);
 	}
+
 	public Ride(String firstStaion, String destiniationstatsion, String intermediateStops, clockTrain leaviningTime,
 			clockTrain arrivalTime) {
 		this.firstStaion = firstStaion;
@@ -86,7 +83,6 @@ public class Ride {
 		this.destiniation = destiniationstatsion;
 	}
 
-
 	public List<Station> getAllStaions() {
 		return allStaions;
 	}
@@ -99,22 +95,24 @@ public class Ride {
 	public String toString() {
 		StringBuffer schedule = new StringBuffer();
 		schedule.append("Origin: " + firstStaion + " - " + getLeaviningTime() + ". \n");
-		if(allStaions.size()>2) {	// Intermediate stations check
-			if(allStaions.size()==3)
-				schedule.append("Stop-station on the way:\n");	
+		if (allStaions.size() > 2) { // Intermediate stations check
+			if (allStaions.size() == 3)
+				schedule.append("Stop-station on the way:\n");
 			else
 				schedule.append("Stop-stations on the way:\n");
-			for (int i = 1; i < allStaions.size()-1; i++) {
+			for (int i = 1; i < allStaions.size() - 1; i++) {
 
-				schedule.append(allStaions.get(i).toString() + "\n");			
+				schedule.append(allStaions.get(i).toString() + "\n");
 			}
-			schedule.append("Destination: " + destiniation + " - " + getArrivalTime()+ ".\n");
+			schedule.append("Destination: " + destiniation + " - " + getArrivalTime() + "\n");
 		}
 		schedule.append("\n >>>>>>>>>>> \n\n");
 		return schedule.toString();
 	}
+
+	public void save(PrintWriter pw) {
+		for (int i = 0; i < allStaions.size(); i++)
+			pw.println(  allStaions.get(i).toString() );
+	}
+
 }
-
-
-
-
