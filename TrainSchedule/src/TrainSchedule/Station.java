@@ -27,7 +27,7 @@ public class Station {
 
 	@Override
 	public String toString() {
-		return name  + " - " + LeaviningTime + ".";
+		return name  + " - " + LeaviningTime ;
 	}
 
 }
