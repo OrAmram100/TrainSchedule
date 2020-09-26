@@ -1,6 +1,7 @@
 package TrainSchedule;
 
 import java.io.File;
+import java.io.ObjectInputStream.GetField;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.InputMismatchException;
@@ -39,6 +40,7 @@ public class controlSystem {
 
 				RidesManagement.sortAll();
 				System.out.println(RidesManagement.stringRides());
+				System.out.println(RidesManagement.getLeaviningTime());
 				break;
 
 			case 3:// Plan trip

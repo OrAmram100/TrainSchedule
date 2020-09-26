@@ -217,4 +217,13 @@ public abstract class RidesManagement {
 		pw.close();
 	}
 
+	public static List<clockTrain> getLeaviningTime() {
+		return leaviningTime;
+	}
+
+	public static List<clockTrain> getDestiniationTime() {
+		return destiniationTime;
+	}
 }
+
+
