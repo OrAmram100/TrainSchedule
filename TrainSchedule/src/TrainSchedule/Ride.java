@@ -95,17 +95,17 @@ public class Ride {
 	public String toString() {
 		StringBuffer schedule = new StringBuffer();
 		schedule.append("Origin: " + firstStaion + " - " + getLeaviningTime() + ". \n");
-		if (allStaions.size() > 2) { // Intermediate stations check
 			if (allStaions.size() == 3)
 				schedule.append("Stop-station on the way:\n");
-			else
+			else if(allStaions.size() >3) {
 				schedule.append("Stop-stations on the way:\n");
+			}
 			for (int i = 1; i < allStaions.size() - 1; i++) {
 
 				schedule.append(allStaions.get(i).toString() + "\n");
 			}
 			schedule.append("Destination: " + destiniation + " - " + getArrivalTime() + "\n");
-		}
+		
 		schedule.append("\n >>>>>>>>>>> \n\n");
 		return schedule.toString();
 	}

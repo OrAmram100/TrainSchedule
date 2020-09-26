@@ -1,7 +1,6 @@
 package Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -16,19 +15,28 @@ public class CheckTimeTest {
 		assertEquals(true, res);
 	}
 		@Test
-		void checkTimeTest1() throws Exception { // should be error.
-			int hours = 10;
+		void checkhour() throws Exception { // should be error.
+			int hours = 28;
 			int minutes = 30;
-			boolean res = clockTrain.checkClock(hours, minutes);
-			assertNotEquals(false, res);
-	
+			try {
+			    assertEquals("28:30", clockTrain.checkClock(hours, minutes));
+			} 
+			catch (Exception e) {
+			    String expectedMessage = "the hour is not valid";
+			    assertEquals( expectedMessage, e.getMessage() );
+			}
 	}
-//
-//		@Test
-//		void timeToComperTest() {
-//			
-//			c1.checkClock("12:00");
-//			int res = c1.timeToCompare();
-//			assertEquals(1200,res);
-//	
+		@Test
+		void checkMinutes() throws Exception { // should be error.
+			int hours = 22;
+			int minutes = 90;
+			try {
+			    assertEquals("22:90", clockTrain.checkClock(hours, minutes));
+			} 
+			catch (Exception e) {
+			    String expectedMessage = "the minutes are not valid";
+			    assertEquals( expectedMessage, e.getMessage() );
+			}
+	}
+
 }
