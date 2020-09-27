@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 
 
-public class controlSystem {
+public class controlSystem implements IsearchRides {
 
 	public static void main(String[] args) throws Exception {
 		File file = new File("TrainSchedule.txt");
@@ -38,11 +38,12 @@ public class controlSystem {
 			case 2:// View schedule
 
 				RidesManagement.sortAll();
+				
 				System.out.println(RidesManagement.stringRides());
 				
 				break;
 
-			case 3:// Plan trip
+			case 3:// search trip
 				RidesManagement.sortAll();
 				RidesManagement.stringRides();
 				System.out.println("Enter starting station");
@@ -57,8 +58,8 @@ public class controlSystem {
 					try {
 						System.out.println("Enter leaving time");
 						scan.useDelimiter(":|\\s+");
-						 SHour = scan.nextInt();
-						 SMin = scan.nextInt();
+						SHour = scan.nextInt();
+						SMin = scan.nextInt();
 						clockTrain.checkClock(SHour, SMin);
 						isValid = true;
 					} catch (InputMismatchException c) {
@@ -71,11 +72,7 @@ public class controlSystem {
 						isValid = false;
 					}
 				} while (!isValid);
-				String route = RidesManagement.LocateRide(des, station, SHour, SMin);
-				if (!route.equals(""))
-					System.out.println("Station " + station + " --> Station " + des + "\n" + route);
-				else
-					System.out.println("Sorry there is no rides for your request today!!");
+				IsearchRides.search(station, des, SHour,SMin);
 				break;
 
 			case 4: // save to file
