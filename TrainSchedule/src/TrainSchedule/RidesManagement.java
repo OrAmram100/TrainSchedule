@@ -230,7 +230,7 @@ public class RidesManagement {
 	public static List<clockTrain> getDestiniationTime() {
 		return destiniationTime;
 	}
-	public static void reseRideList() {
+	public static void resetRideList() {
 		allRides = new ArrayList<Ride>();
 		leaviningTime = new ArrayList<clockTrain>();
 		destiniationTime = new ArrayList<clockTrain>();

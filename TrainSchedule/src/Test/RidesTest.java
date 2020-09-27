@@ -38,7 +38,7 @@ public class RidesTest implements CallToMethod {
 			sb.append(ride + "\n");
 		}
 		sb.append("\n");
-		RidesManagement.reseRideList();
+		RidesManagement.resetRideList();
 		CallToMethod.RmCheck();
 		assertEquals(sb.toString(), RidesManagement.stringRides().toString());
 		Tscan.close();
