@@ -14,11 +14,10 @@ public class RidesManagement {
 	private static List<Ride> allRides = new ArrayList<Ride>();
 	private static List<clockTrain> leaviningTime = new ArrayList<clockTrain>();
 	private static List<clockTrain> destiniationTime = new ArrayList<clockTrain>();
-	private static int numOfRides;
-	private static int numsOfStations;
+	private static int numOfRides = 0;
+	private static int numsOfStations = 0;
 
 
-	
 	public List<Ride> getAllRides() {
 		return allRides;
 	}
@@ -29,7 +28,7 @@ public class RidesManagement {
 
 	public static void DataInsertionViaFile(Scanner sFile) throws Exception {
 		int doContinue = sFile.nextInt();
-		do {
+		do { 
 			sFile.nextLine();
 			String Origin = sFile.nextLine();
 			sFile.useDelimiter(":|\\s+");
@@ -44,8 +43,10 @@ public class RidesManagement {
 			destiniationTime.add(new clockTrain(DHour, DMin));
 			allRides.add(new Ride(Origin, destiniation, destiniationTime.get(numOfRides),
 					leaviningTime.get(numsOfStations)));
+
 			Station newStation = new Station(Origin, leaviningTime.get(numsOfStations));
 			Station destinateStation = new Station(destiniation, destiniationTime.get(numOfRides));
+			
 			allRides.get(numOfRides).addStation(newStation);
 			allRides.get(numOfRides).addStation(destinateStation);
 			sFile.nextLine();
@@ -217,9 +218,10 @@ public class RidesManagement {
 	public static void save(String fileName) throws FileNotFoundException {
 		PrintWriter pw = new PrintWriter(new File(fileName));
 		for (int i = 0; i < allRides.size(); i++) {
-			pw.print( 1 + "\n");
+			pw.print( "Origin" + "\n");
 			allRides.get(i).save(pw);
 		}
+		pw.print("End");
 		pw.close();
 	}
 
@@ -237,6 +239,94 @@ public class RidesManagement {
 		numOfRides= 0;
 		numsOfStations = 0;
 	}
-}
+
+	public static boolean FiletoUserInsertion(Scanner userFile) throws Exception {
+		String endIndex="end";
+		String originIndex = "Origin";
+		String desIndex = "Destination";
+		String interIndex = "Intermediate";
+		String saveOrigin = "";
+		String saveDes = "";
+		int rideReady = 0;
+		int nextRide = 0;
+		
+		while(userFile.hasNext()){
+			String checkInput = userFile.nextLine();
+			
+			if(checkInput.equalsIgnoreCase(endIndex)) 		//userFile.nextLine() == newRideIndex) {
+				return true;
+			
+			if(checkInput.equalsIgnoreCase(originIndex)) {
+				String Origin = userFile.nextLine();
+				userFile.useDelimiter(":|\\s+");
+				int OHour = userFile.nextInt();
+				int OMin = userFile.nextInt();
+				leaviningTime.add(new clockTrain(OHour, OMin));
+				saveOrigin = Origin;
+				rideReady++;
+				userFile.nextLine();
+			}
+			
+			if(checkInput.equalsIgnoreCase(interIndex)) {
+				String intermediate = userFile.nextLine();
+				userFile.useDelimiter(":|\\s+");
+				int ILHour = userFile.nextInt();
+				int ILMin = userFile.nextInt();
+				leaviningTime.add(new clockTrain(ILHour, ILMin));
+				Station newInter = new Station(intermediate, leaviningTime.get(numsOfStations));
+				allRides.get(numOfRides).addStation(newInter);
+			}
+			
+			if(checkInput.equalsIgnoreCase(desIndex)) {
+				String destiniation = userFile.nextLine();
+				userFile.useDelimiter(":|\\s+");
+				int DHour = userFile.nextInt();
+				int DMin = userFile.nextInt();
+				destiniationTime.add(new clockTrain(DHour, DMin));
+				saveDes = destiniation;
+				rideReady++;
+			}
+			
+			if(rideReady == 2) {
+				userFile.nextLine();
+				allRides.add(new Ride(saveOrigin, saveDes, destiniationTime.get(numOfRides),
+						leaviningTime.get(numsOfStations)));
+				Station newStation = new Station(saveOrigin, leaviningTime.get(numsOfStations));
+				Station destinateStation = new Station(saveDes, destiniationTime.get(numOfRides));
+				allRides.get(numOfRides).addStation(newStation);
+				allRides.get(numOfRides).addStation(destinateStation);
+				numsOfStations++;				
+				nextRide++;
+				if(nextRide > 1)
+					numOfRides++;
+				rideReady = 0;
+			}
+		}
+		System.out.println("Data insertion completed successfully. \n\n");
+		return false;
+	}
+}	
+
+
+//		do {
+//
+//
+//			
+//			
+//			String interCheck = userFile.next();
+//			
+//			while (interCheck.equalsIgnoreCase("yes")) {
+//				
+//				
+//				userFile.nextLine();
+//				numsOfStations++;
+//				interCheck = userFile.next();
+//			}
+//			
+//			doContinue = userFile.nextInt();
+//		} while (doContinue == 1);
+//		System.out.println("Data insertion completed successfully. \n\n");
+//		
+
 
 

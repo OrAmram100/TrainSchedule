@@ -1,6 +1,7 @@
 package TrainSchedule;
 
 import java.io.File;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.InputMismatchException;
@@ -38,9 +39,7 @@ public class controlSystem implements IsearchRides {
 			case 2:// View schedule
 
 				RidesManagement.sortAll();
-				
 				System.out.println(RidesManagement.stringRides());
-				
 				break;
 
 			case 3:// search trip
@@ -76,8 +75,13 @@ public class controlSystem implements IsearchRides {
 				break;
 
 			case 4: // save to file
-				String out = new SimpleDateFormat("yyyy-MM-dd '.txt'").format(new Date());
-				RidesManagement.save("railWay " + out);
+				StringBuffer date = new StringBuffer();
+				RidesManagement.sortAll();
+				System.out.println("Enter date by auto/keyboard");
+				String inputChoice = scan.next();
+				date = fileName(scan, inputChoice);
+				System.out.println(date.toString());
+				RidesManagement.save("railWay " + date);
 				break;
 
 			case 9: // Exit
@@ -91,9 +95,51 @@ public class controlSystem implements IsearchRides {
 				System.out.println("This choise does not exist in the menu"); // case choice is not valid
 				break;
 			}
-
 		} while (ifContinue);
-
 	}
 
+	private static StringBuffer fileName(Scanner scan,String inputChoice) {
+		String format ="";
+		StringBuffer date = new StringBuffer();
+		if (inputChoice.equalsIgnoreCase("auto")) {
+			format = new SimpleDateFormat("yyyy-MM-dd'.txt'").format(new Date());
+			date.append(format);
+		} else if (inputChoice.equalsIgnoreCase("keyboard")) {
+			date.append(DateViaKeyboard(scan, date));
+			System.out.println(date.toString());
+		}
+		return date;
+	}
+
+	private static StringBuffer DateViaKeyboard(Scanner scan, StringBuffer date) {
+		boolean ValidDate;
+		do {
+			System.out.println("Date format: yyyy-MM-dd");
+			scan.useDelimiter("-|\\s+");
+			int year = scan.nextInt();
+			int month = scan.nextInt();
+			int day =  scan.nextInt();
+			ValidDate = isValidDate(year,month,day);
+			} while(!ValidDate);
+		return date;
+	}
+
+	private static boolean isValidDate(int year, int month, int day) {
+		boolean boolCheck = true;
+		if(year < 2020)
+			boolCheck = false;
+		if((month>12) || (month<1))
+			boolCheck = false;
+		if((day<1) || (day>31))
+			boolCheck = false;
+		if(!boolCheck) {
+			System.out.println("not ok");
+			return false;
+		}
+		return true;
+	}
 }
+
+
+
+
