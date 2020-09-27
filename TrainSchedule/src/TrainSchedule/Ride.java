@@ -111,8 +111,14 @@ public class Ride {
 	}
 
 	public void save(PrintWriter pw) {
-		for (int i = 0; i < allStaions.size(); i++)
-			pw.println(  allStaions.get(i).toString() );
+		for (int i = 0; i < allStaions.size(); i++) {
+			if(i == 0) {	//pw first and last stations
+				pw.println(allStaions.get(i).getName()+"\n"+allStaions.get(i).getLeaviningTime().toString());
+				pw.println("Destination"+"\n" + allStaions.get(allStaions.size()-1).getName() + "\n" + allStaions.get(allStaions.size()-1).getLeaviningTime().toString());
+			}
+			else if(i > 0 && i < allStaions.size()-1)	//pw only Intermediate stations
+				pw.println("Intermediate"+"\n" + allStaions.get(i).getName() + "\n" + allStaions.get(i).getLeaviningTime().toString());			
+			 
+		}
 	}
-
 }

@@ -9,7 +9,7 @@ public interface IsearchRides {
 			System.out.println("Station " + station + " --> Station " + destination + "\n" + route);
 		else
 			System.out.println("Sorry there is no rides for your request today!!");
-
+		
 	}
 
 }
