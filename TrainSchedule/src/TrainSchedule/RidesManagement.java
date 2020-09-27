@@ -10,7 +10,7 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-public abstract class RidesManagement {
+public class RidesManagement {
 	private static List<Ride> allRides = new ArrayList<Ride>();
 	private static List<clockTrain> leaviningTime = new ArrayList<clockTrain>();
 	private static List<clockTrain> destiniationTime = new ArrayList<clockTrain>();
@@ -146,11 +146,12 @@ public abstract class RidesManagement {
 		} while (doContinue.equalsIgnoreCase("yes"));
 	}
 
-	public static void sortAll() {
+	public static String sortAll() {
 		for (int i = 0; i < allRides.size(); i++) {
 			allRides.get(i).sortStations();
 		}
-		sortRides(allRides);
+		 return sortRides(allRides).toString();
+		
 	}
 
 	public static String stringRides() {
@@ -161,7 +162,7 @@ public abstract class RidesManagement {
 		return sb.toString();
 	}
 
-	private static List<Ride> sortRides(List<Ride> allRides) {
+	public static String sortRides(List<Ride> allRides) {
 		Comparator<Ride> compareByTime = new Comparator<Ride>() {
 			public int compare(Ride o1, Ride o2) {
 				if (o1.getAllStaions().get(0).getLeaviningTime().getHour() < o2.getAllStaions().get(0)
@@ -178,9 +179,14 @@ public abstract class RidesManagement {
 			}
 		};
 		Collections.sort(allRides, compareByTime);
-
-		return allRides;
-	}
+			StringBuilder sb = new StringBuilder();
+			for (int i = 0; i < allRides.size(); i++) {
+				sb.append((allRides.get(i).toString()));
+			}
+			return sb.toString();
+		
+	
+}
 
 	public static String LocateRide(String des, String station, int sHour, int sMin) {
 		String route = "";
@@ -223,6 +229,13 @@ public abstract class RidesManagement {
 
 	public static List<clockTrain> getDestiniationTime() {
 		return destiniationTime;
+	}
+	public static void reseRideList() {
+		allRides = new ArrayList<Ride>();
+		leaviningTime = new ArrayList<clockTrain>();
+		destiniationTime = new ArrayList<clockTrain>();
+		numOfRides= 0;
+		numsOfStations = 0;
 	}
 }
 

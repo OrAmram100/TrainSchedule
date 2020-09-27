@@ -106,7 +106,7 @@ public class Ride {
 			}
 			schedule.append("Destination: " + destiniation + " - " + getArrivalTime() + "\n");
 		
-		schedule.append("\n >>>>>>>>>>> \n\n");
+		schedule.append("\n");
 		return schedule.toString();
 	}
 
