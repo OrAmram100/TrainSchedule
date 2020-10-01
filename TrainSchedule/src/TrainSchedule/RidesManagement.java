@@ -17,7 +17,6 @@ public class RidesManagement {
 	private static int numOfRides = 0;
 	private static int numsOfStations = 0;
 
-
 	public List<Ride> getAllRides() {
 		return allRides;
 	}
@@ -28,7 +27,7 @@ public class RidesManagement {
 
 	public static void DataInsertionViaFile(Scanner sFile) throws Exception {
 		int doContinue = sFile.nextInt();
-		do { 
+		do {
 			sFile.nextLine();
 			String Origin = sFile.nextLine();
 			sFile.useDelimiter(":|\\s+");
@@ -46,7 +45,7 @@ public class RidesManagement {
 
 			Station newStation = new Station(Origin, leaviningTime.get(numsOfStations));
 			Station destinateStation = new Station(destiniation, destiniationTime.get(numOfRides));
-			
+
 			allRides.get(numOfRides).addStation(newStation);
 			allRides.get(numOfRides).addStation(destinateStation);
 			sFile.nextLine();
@@ -151,8 +150,8 @@ public class RidesManagement {
 		for (int i = 0; i < allRides.size(); i++) {
 			allRides.get(i).sortStations();
 		}
-		 return sortRides(allRides).toString();
-		
+		return sortRides(allRides).toString();
+
 	}
 
 	public static String stringRides() {
@@ -169,9 +168,9 @@ public class RidesManagement {
 				if (o1.getAllStaions().get(0).getLeaviningTime().getHour() < o2.getAllStaions().get(0)
 						.getLeaviningTime().getHour() // Compare by hour
 						|| (o1.getAllStaions().get(0).getLeaviningTime().getHour() == o2.getAllStaions().get(0)
-								.getLeaviningTime().getHour() // Compare by minute
-								&& o1.getAllStaions().get(0).getLeaviningTime().getMinute() < o2.getAllStaions().get(0)
-										.getLeaviningTime().getMinute()))
+						.getLeaviningTime().getHour() // Compare by minute
+						&& o1.getAllStaions().get(0).getLeaviningTime().getMinute() < o2.getAllStaions().get(0)
+						.getLeaviningTime().getMinute()))
 					return -1;
 				else if (o1.getAllStaions().get(0).getLeaviningTime().getMinute() == o2.getAllStaions().get(0)
 						.getLeaviningTime().getMinute())
@@ -180,14 +179,13 @@ public class RidesManagement {
 			}
 		};
 		Collections.sort(allRides, compareByTime);
-			StringBuilder sb = new StringBuilder();
-			for (int i = 0; i < allRides.size(); i++) {
-				sb.append((allRides.get(i).toString()));
-			}
-			return sb.toString();
-		
-	
-}
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < allRides.size(); i++) {
+			sb.append((allRides.get(i).toString()));
+		}
+		return sb.toString();
+
+	}
 
 	public static String LocateRide(String des, String station, int sHour, int sMin) {
 		String route = "";
@@ -195,11 +193,11 @@ public class RidesManagement {
 			for (int startDes = 0; startDes < allRides.get(i).getAllStaions().size(); startDes++) {
 				if (allRides.get(i).getAllStaions().get(startDes).getName().equalsIgnoreCase(station) // Compare name
 						&& (allRides.get(i).getAllStaions().get(startDes).getLeaviningTime().getHour() > sHour // Compare
-																												// by
-																												// hour
+								// by
+								// hour
 								|| (allRides.get(i).getAllStaions().get(startDes).getLeaviningTime().getHour() == sHour
-										&& allRides.get(i).getAllStaions().get(startDes).getLeaviningTime()
-												.getMinute() >= sMin))) { // Compare by minute
+								&& allRides.get(i).getAllStaions().get(startDes).getLeaviningTime()
+								.getMinute() >= sMin))) { // Compare by minute
 					for (int lastDes = startDes; lastDes < allRides.get(i).getAllStaions().size(); lastDes++) {
 						if (allRides.get(i).getAllStaions().get(lastDes).getName().equalsIgnoreCase(des)) {
 							route = "The train will arraive to the destination at :"
@@ -218,7 +216,7 @@ public class RidesManagement {
 	public static void save(String fileName) throws FileNotFoundException {
 		PrintWriter pw = new PrintWriter(new File(fileName));
 		for (int i = 0; i < allRides.size(); i++) {
-			pw.print( "Origin" + "\n");
+			pw.print("Origin" + "\n");
 			allRides.get(i).save(pw);
 		}
 		pw.print("End");
@@ -233,16 +231,16 @@ public class RidesManagement {
 	public static List<clockTrain> getDestiniationTime() {
 		return destiniationTime;
 	}
+
 	public static void resetRideList() {
 		allRides = new ArrayList<Ride>();
 		leaviningTime = new ArrayList<clockTrain>();
 		destiniationTime = new ArrayList<clockTrain>();
-		numOfRides= 0;
+		numOfRides = 0;
 		numsOfStations = 0;
 	}
 
-	public static boolean FiletoUserInsertion(Scanner userFile) throws Exception {
-		String endIndex="end";
+	public static void FiletoUserInsertion(Scanner userFile) throws Exception {
 		String originIndex = "Origin";
 		String desIndex = "Destination";
 		String interIndex = "Intermediate";
@@ -250,14 +248,11 @@ public class RidesManagement {
 		String saveDes = "";
 		int rideReady = 0;
 		int nextRide = 0;
-		
-		while(userFile.hasNext()){
+
+		while (userFile.hasNext()) {
 			String checkInput = userFile.nextLine();
-			
-			if(checkInput.equalsIgnoreCase(endIndex)) 		//userFile.nextLine() == newRideIndex) {
-				return true;
-			
-			if(checkInput.equalsIgnoreCase(originIndex)) {
+
+			if (checkInput.equalsIgnoreCase(originIndex)) {
 				String Origin = userFile.nextLine();
 				userFile.useDelimiter(":|\\s+");
 				int OHour = userFile.nextInt();
@@ -267,8 +262,8 @@ public class RidesManagement {
 				rideReady++;
 				userFile.nextLine();
 			}
-			
-			if(checkInput.equalsIgnoreCase(interIndex)) {
+
+			if (checkInput.equalsIgnoreCase(interIndex)) {
 				String intermediate = userFile.nextLine();
 				userFile.useDelimiter(":|\\s+");
 				int ILHour = userFile.nextInt();
@@ -277,8 +272,8 @@ public class RidesManagement {
 				Station newInter = new Station(intermediate, leaviningTime.get(numsOfStations));
 				allRides.get(numOfRides).addStation(newInter);
 			}
-			
-			if(checkInput.equalsIgnoreCase(desIndex)) {
+
+			if (checkInput.equalsIgnoreCase(desIndex)) {
 				String destiniation = userFile.nextLine();
 				userFile.useDelimiter(":|\\s+");
 				int DHour = userFile.nextInt();
@@ -287,8 +282,8 @@ public class RidesManagement {
 				saveDes = destiniation;
 				rideReady++;
 			}
-			
-			if(rideReady == 2) {
+
+			if (rideReady == 2) {
 				userFile.nextLine();
 				allRides.add(new Ride(saveOrigin, saveDes, destiniationTime.get(numOfRides),
 						leaviningTime.get(numsOfStations)));
@@ -296,20 +291,13 @@ public class RidesManagement {
 				Station destinateStation = new Station(saveDes, destiniationTime.get(numOfRides));
 				allRides.get(numOfRides).addStation(newStation);
 				allRides.get(numOfRides).addStation(destinateStation);
-				numsOfStations++;				
+				numsOfStations++;
 				nextRide++;
-				if(nextRide > 1)
+				if (nextRide > 1)
 					numOfRides++;
 				rideReady = 0;
 			}
 		}
-		System.out.println("Data insertion completed successfully. \n\n");
-		return false;
 	}
-	
-	
-	
-}	
 
-
-
+}

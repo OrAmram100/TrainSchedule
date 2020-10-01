@@ -6,8 +6,6 @@ import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-
-
 public class controlSystem implements IsearchRides {
 
 	public static void main(String[] args) throws Exception {
@@ -70,7 +68,7 @@ public class controlSystem implements IsearchRides {
 						isValid = false;
 					}
 				} while (!isValid);
-				IsearchRides.search(station, des, SHour,SMin);
+				IsearchRides.search(station, des, SHour, SMin);
 				break;
 
 			case 4: // save to file
@@ -93,7 +91,3 @@ public class controlSystem implements IsearchRides {
 		} while (ifContinue);
 	}
 }
-
-
-
-
