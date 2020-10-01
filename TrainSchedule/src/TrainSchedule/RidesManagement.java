@@ -271,6 +271,7 @@ public class RidesManagement {
 				leaviningTime.add(new clockTrain(ILHour, ILMin));
 				Station newInter = new Station(intermediate, leaviningTime.get(numsOfStations));
 				allRides.get(numOfRides).addStation(newInter);
+				numsOfStations++;
 			}
 
 			if (checkInput.equalsIgnoreCase(desIndex)) {
@@ -284,6 +285,7 @@ public class RidesManagement {
 			}
 
 			if (rideReady == 2) {
+				numsOfStations=0;
 				userFile.nextLine();
 				allRides.add(new Ride(saveOrigin, saveDes, destiniationTime.get(numOfRides),
 						leaviningTime.get(numsOfStations)));
