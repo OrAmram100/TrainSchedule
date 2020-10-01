@@ -3,11 +3,9 @@ package TrainSchedule;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -309,67 +307,8 @@ public class RidesManagement {
 		return false;
 	}
 	
-	public static StringBuffer fileName(Scanner scan,String inputChoice) {
-		StringBuffer fDate = new StringBuffer();
-		if (inputChoice.equalsIgnoreCase("keyboard")) {
-			fDate.append(RidesManagement.DateViaKeyboard(scan));
-			System.out.println("File's name: railWay "+ fDate.toString());
-		}
-		else
-			fDate.append(new SimpleDateFormat("yyyy-MM-dd'.txt'").format(new Date()));
-		return fDate;
-	}
 	
-	private static StringBuffer DateViaKeyboard(Scanner scan) {
-		StringBuffer date = new StringBuffer();
-		boolean ValidDate;
-		int year;
-		int month;
-		int day;
-		do {
-			scan.useDelimiter("-|\\s+");	//notice '-', or'|', Any Whitespace'\s' with One or more repetitions'+'
-			year = scan.nextInt();
-			month = scan.nextInt();
-			day =  scan.nextInt();
-			ValidDate = isValidDate(year,month,day);
-			} while(!ValidDate);
-		date.append(dateAdjustment(year,month,day) +".txt");
-		return date;
-	}
-
-	private static String dateAdjustment(int year, int month, int day) {
-		String date;
-		String syear= ""+year;
-		String smonth = ""+month;
-		String sday= ""+day;
-		if(month<10)
-			smonth = "0"+month;
-		if(day<10)
-			sday="0"+day;
-		date = syear+"-"+smonth+"-"+sday;
-				
-		
-		return date;
-	}
-
-	private static boolean isValidDate(int year, int month, int day) {
-		boolean boolCheck = true;
-		if(year < 2020 || year > 3000)
-			boolCheck = false;
-		if((month>12) || (month<1))
-			boolCheck = false;
-		if(month == 4 || month == 6 || month == 9 || month == 11) { 
-			if(day>30)
-				return false;
-		}
-		if((day<1) || (day>31))
-			boolCheck = false;
-		if(!boolCheck) {
-			System.out.println("Date isn't valid");
-			return false;
-		}
-		return true;
-	}
+	
 }	
 
 

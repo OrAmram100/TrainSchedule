@@ -1,7 +1,6 @@
 package TrainSchedule;
 
 import java.io.File;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.InputMismatchException;
@@ -76,11 +75,8 @@ public class controlSystem implements IsearchRides {
 
 			case 4: // save to file
 				RidesManagement.sortAll();
-				System.out.println("Enter file Date by AUTO / KEYBOARD");
-				String inputChoice = scan.next();
-				if (inputChoice.equalsIgnoreCase("keyboard"))
-					System.out.println("Date format: yyyy-MM-dd");
-				RidesManagement.save("railWay " + RidesManagement.fileName(scan, inputChoice));
+				String out = new SimpleDateFormat("yyyy-MM-dd '.txt'").format(new Date());
+				RidesManagement.save("railWay " + out);
 				break;
 
 			case 9: // Exit
