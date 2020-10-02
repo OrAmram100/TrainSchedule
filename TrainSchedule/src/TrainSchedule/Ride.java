@@ -60,6 +60,7 @@ public class Ride {
 		};
 		Collections.sort(allStaions, compareByTime);
 	}
+	
 
 	public Ride(String firstStaion, String destiniationstatsion, String intermediateStops, clockTrain leaviningTime,
 			clockTrain arrivalTime) {

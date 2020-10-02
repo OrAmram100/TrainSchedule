@@ -168,9 +168,9 @@ public class RidesManagement {
 				if (o1.getAllStaions().get(0).getLeaviningTime().getHour() < o2.getAllStaions().get(0)
 						.getLeaviningTime().getHour() // Compare by hour
 						|| (o1.getAllStaions().get(0).getLeaviningTime().getHour() == o2.getAllStaions().get(0)
-						.getLeaviningTime().getHour() // Compare by minute
-						&& o1.getAllStaions().get(0).getLeaviningTime().getMinute() < o2.getAllStaions().get(0)
-						.getLeaviningTime().getMinute()))
+								.getLeaviningTime().getHour() // Compare by minute
+								&& o1.getAllStaions().get(0).getLeaviningTime().getMinute() < o2.getAllStaions().get(0)
+										.getLeaviningTime().getMinute()))
 					return -1;
 				else if (o1.getAllStaions().get(0).getLeaviningTime().getMinute() == o2.getAllStaions().get(0)
 						.getLeaviningTime().getMinute())
@@ -186,9 +186,11 @@ public class RidesManagement {
 		return sb.toString();
 
 	}
+	
 
 	public static String LocateRide(String des, String station, int sHour, int sMin) {
 		String route = "";
+		int maxRidesToSearch = 1;
 		for (int i = 0; i < allRides.size(); i++) {
 			for (int startDes = 0; startDes < allRides.get(i).getAllStaions().size(); startDes++) {
 				if (allRides.get(i).getAllStaions().get(startDes).getName().equalsIgnoreCase(station) // Compare name
@@ -196,17 +198,27 @@ public class RidesManagement {
 								// by
 								// hour
 								|| (allRides.get(i).getAllStaions().get(startDes).getLeaviningTime().getHour() == sHour
-								&& allRides.get(i).getAllStaions().get(startDes).getLeaviningTime()
-								.getMinute() >= sMin))) { // Compare by minute
+										&& allRides.get(i).getAllStaions().get(startDes).getLeaviningTime()
+												.getMinute() >= sMin))) { // Compare by minute
 					for (int lastDes = startDes; lastDes < allRides.get(i).getAllStaions().size(); lastDes++) {
 						if (allRides.get(i).getAllStaions().get(lastDes).getName().equalsIgnoreCase(des)) {
-							route = "The train will arraive to the destination at :"
+							route+= "Station " + allRides.get(i).getAllStaions().get(startDes).getName() + " --> Station "  + allRides.get(i).getAllStaions().get(lastDes).getName()+"\n\n";
+							route+= "Railway  : \n\n ";
+							route+= "The train will arraive to the destination at :"
 									+ allRides.get(i).getAllStaions().get(lastDes).getLeaviningTime() + "\n";
 							for (int midRide = startDes; midRide <= lastDes; midRide++) {
 								route += allRides.get(i).getAllStaions().get(midRide) + "\n";
+
 							}
+							if (maxRidesToSearch == 3) {
+								return route;
+							}
+							route+="\n";
+							maxRidesToSearch++;
 						}
+						
 					}
+					
 				}
 			}
 		}
@@ -285,7 +297,7 @@ public class RidesManagement {
 			}
 
 			if (rideReady == 2) {
-				numsOfStations=0;
+				numsOfStations = 0;
 				userFile.nextLine();
 				allRides.add(new Ride(saveOrigin, saveDes, destiniationTime.get(numOfRides),
 						leaviningTime.get(numsOfStations)));

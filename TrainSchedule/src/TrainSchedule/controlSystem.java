@@ -69,6 +69,7 @@ public class controlSystem implements IsearchRides {
 					}
 				} while (!isValid);
 				IsearchRides.search(station, des, SHour, SMin);
+				
 				break;
 
 			case 4: // save to file

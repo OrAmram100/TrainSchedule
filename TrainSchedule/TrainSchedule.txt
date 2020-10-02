@@ -1,7 +1,7 @@
 1
 Haifa
 16:12
-Be'er Sheva-North/University
+Be'er Sheva-North-University
 18:50
 yes
 Tel Aviv-Hashalom
@@ -9,6 +9,633 @@ Tel Aviv-Hashalom
 yes
 Tel Aviv-HaHagana
 17:12
+no
+1
+Haifa
+08:12
+Be'er Sheva-North-University
+10:50
+yes
+Tel Aviv-Hashalom
+08:40
+yes
+Tel Aviv-HaHagana
+09:00
+no
+1
+Haifa
+17:12
+Be'er Sheva-North-University
+19:50
+yes
+Tel Aviv-Hashalom
+18:40
+yes
+Tel Aviv-HaHagana
+18:12
+no
+1
+Haifa
+8:00
+Be'er Sheva-North-University
+11:10
+yes
+Tel Aviv-Hashalom
+8:38
+yes
+Tel Aviv-HaHagana
+08:43
+no
+1
+Ako
+05:00
+Haifa-Hof Hakarmel
+05:36
+yes
+Kiryat Motzkin
+05:05
+yes
+Haifa-Bat Galim
+05:30
+yes
+Kiryat Hayim
+05:08
+yes
+Haifa Center-Hashmona
+05:25
+no
+1
+Ako
+18:00
+Haifa-Hof Hakarmel
+18:36
+yes
+Kiryat Motzkin
+18:05
+yes
+Haifa-Bat Galim
+18:30
+yes
+Kiryat Hayim
+18:08
+yes
+Haifa Center-Hashmona
+18:25
+no
+1
+Ofakim
+05:09
+Tel Aviv-University
+07:04
+yes
+Netivot
+05:17
+yes
+Sderot
+05:27
+yes
+Ashkelon
+05:42
+yes
+Ashdod
+05:57
+yes
+Yavne-West
+06:12
+yes
+Rishon Letzyon
+06:23
+yes
+Bat Yam
+06:30
+yes
+Holon
+6:40
+yes
+Tel Aviv-HaHagana
+06:43
+yes
+Tel Aviv-Hashalom
+06:49
+yes
+Tel Aviv-Savidor
+07:00
+no
+1
+Ofakim
+17:09
+Tel Aviv-University
+19:04
+yes
+Netivot
+17:17
+yes
+Sderot
+17:27
+yes
+Ashkelon
+17:42
+yes
+Ashdod
+17:57
+yes
+Yavne-West
+18:12
+yes
+Rishon Letzyon
+18:23
+yes
+Bat Yam
+18:30
+yes
+Holon
+18:40
+yes
+Tel Aviv-HaHagana
+18:43
+yes
+Tel Aviv-Hashalom
+18:49
+yes
+Tel Aviv-Savidor
+19:00
+no
+1
+Ofakim
+19:00
+Tel Aviv-University
+21:05
+yes
+Netivot
+19:17
+yes
+Sderot
+19:27
+yes
+Ashkelon
+19:42
+yes
+Ashdod
+19:57
+yes
+Yavne-West
+20:12
+yes
+Rishon Letzyon
+20:25
+yes
+Bat Yam
+20:30
+yes
+Holon
+20:40
+yes
+Tel Aviv-HaHagana
+20:42
+yes
+Tel Aviv-Hashalom
+20:49
+yes
+Tel Aviv-Savidor
+21:00
+no
+1
+Modiin
+17:18
+Tel Aviv-University
+18:01
+yes
+Tel Aviv-HaHagana
+17:47
+yes
+Tel Aviv-Hashalom
+17:51
+yes
+Tel Aviv-Savidor
+17:58
+no
+1
+Ofakim
+21:00
+Tel Aviv-University
+23:05
+yes
+Netivot
+21:17
+yes
+Sderot
+21:27
+yes
+Ashkelon
+21:42
+yes
+Ashdod
+21:57
+yes
+Yavne-West
+22:12
+yes
+Rishon Letzyon
+22:23
+yes
+Bat Yam
+22:30
+yes
+Holon
+22:40
+yes
+Tel Aviv-HaHagana
+22:43
+yes
+Tel Aviv-Hashalom
+22:49
+yes
+Tel Aviv-Savidor
+23:00
+no
+1
+Ofakim
+11:00
+Tel Aviv-University
+13:04
+yes
+Netivot
+11:17
+yes
+Sderot
+11:27
+yes
+Ashkelon
+11:42
+yes
+Ashdod
+11:57
+yes
+Yavne-West
+12:12
+yes
+Rishon Letzyon
+12:23
+yes
+Bat Yam
+12:30
+yes
+Holon
+12:40
+yes
+Tel Aviv-HaHagana
+12:43
+yes
+Tel Aviv-Hashalom
+12:49
+yes
+Tel Aviv-Savidor
+13:00
+no
+1
+Modiin
+11:00
+Tel Aviv-University
+11:50
+yes
+Tel Aviv-HaHagana
+11:45
+yes
+Tel Aviv-Hashalom
+11:40
+yes
+Tel Aviv-Savidor
+11:35
+no
+1
+Modiin
+05:18
+Tel Aviv-University
+06:01
+yes
+Tel Aviv-HaHagana
+05:47
+yes
+Tel Aviv-Hashalom
+05:51
+yes
+Tel Aviv-Savidor
+05:58
+no
+1
+Binyamina
+06:30
+Nahariya
+07:39
+yes
+Haifa-Hof Hakarmel
+06:49
+yes
+Haifa-Bat Galim
+06:56
+yes
+Hamifrats
+07:08
+yes
+Kiryat Hayim
+07:17
+yes
+Kiryat Motzkin
+07:20
+yes
+Ako
+07:29
+no
+1
+Binyamina
+18:30
+Nahariya
+19:39
+yes
+Haifa-Hof Hakarmel
+18:49
+yes
+Haifa-Bat Galim
+18:56
+yes
+Hamifrats
+19:08
+yes
+Kiryat Hayim
+19:08
+yes
+Kiryat Motzkin
+19:20
+yes
+Ako
+19:29
+no
+1
+Ashkelon
+05:58
+Tel Aviv-University
+07:13
+yes
+Ashdod
+06:11
+yes
+Yavne
+06:24
+yes
+Rehovot
+06:32
+yes
+Lod
+06:42
+yes
+Kfar Habad
+06:50
+yes
+Tel Aviv-Hagana
+06:59
+yes
+Tel Aviv-Hashalom
+07:04
+yes
+Tel Aviv-Savidor
+07:10
+no
+1
+Ashkelon
+17:58
+Tel Aviv-University
+19:13
+yes
+Ashdod
+18:11
+yes
+Yavne
+18:24
+yes
+Rehovot
+18:32
+yes
+Lod
+18:42
+yes
+Kfar Habad
+18:50
+yes
+Tel Aviv-Hagana
+18:59
+yes
+Tel Aviv-Hashalom
+19:04
+yes
+Tel Aviv-Savidor
+19:10
+no
+1
+Ashkelon
+10:00
+Tel Aviv-University
+11:15
+yes
+Ashdod
+10:11
+yes
+Yavne
+10:24
+yes
+Rehovot
+10:32
+yes
+Lod
+10:42
+yes
+Kfar Habad
+10:52
+yes
+Tel Aviv-Hagana
+10:59
+yes
+Tel Aviv-Hashalom
+11:05
+yes
+Tel Aviv-Savidor
+11:10
+no
+1
+Ashkelon
+12:00
+Tel Aviv-University
+13:15
+yes
+Ashdod
+12:11
+yes
+Yavne
+12:24
+yes
+Rehovot
+12:32
+yes
+Lod
+12:42
+yes
+Kfar Habad
+12:50
+yes
+Tel Aviv-Hagana
+12:59
+yes
+Tel Aviv-Hashalom
+13:04
+yes
+Tel Aviv-Savidor
+13:10
+no
+1
+Ahihud
+06:00
+Tel Aviv-Savidor
+07:35
+yes
+Kiryat Motzkin
+06:19
+yes
+Hamifrats
+06:26
+yes
+Haifa-Bat Galim
+06:39
+yes
+Haifa-Hof Hakarmel
+06:45
+yes
+Hadera-West
+07:09
+yes
+Tel Aviv-University
+07:30
+no
+1
+Ahihud
+09:00
+Tel Aviv-Savidor
+10:35
+yes
+Kiryat Motzkin
+09:19
+yes
+Hamifrats
+09:26
+yes
+Haifa-Bat Galim
+09:39
+yes
+Haifa-Hof Hakarmel
+09:45
+yes
+Hadera-West
+10:09
+yes
+Tel Aviv-University
+10:30
+no
+1
+Ahihud
+11:00
+Tel Aviv-Savidor
+12:35
+yes
+Kiryat Motzkin
+11:19
+yes
+Hamifrats
+11:26
+yes
+Haifa-Bat Galim
+11:39
+yes
+Haifa-Hof Hakarmel
+11:45
+yes
+Hadera-West
+12:09
+yes
+Tel Aviv-University
+12:30
+no
+1
+Ahihud
+19:00
+Tel Aviv-Savidor
+20:35
+yes
+Kiryat Motzkin
+19:19
+yes
+Hamifrats
+19:26
+yes
+Haifa-Bat Galim
+19:39
+yes
+Haifa-Hof Hakarmel
+19:45
+yes
+Hadera-West
+20:09
+yes
+Tel Aviv-University
+20:30
+no
+1
+Ahihud
+20:00
+Tel Aviv-Savidor
+21:35
+yes
+Kiryat Motzkin
+20:19
+yes
+Hamifrats
+20:26
+yes
+Haifa-Bat Galim
+20:39
+yes
+Haifa-Hof Hakarmel
+20:45
+yes
+Hadera-West
+21:09
+yes
+Tel Aviv-University
+21:30
+no
+1
+Binyamina
+05:40
+Nahariya
+06:46
+yes
+Haifa-Hof Hakarmel
+05:55
+yes
+Atlit
+05:46
+yes
+Haifa-Bat Galim
+06:02
+yes
+Hamifras Central Station
+06:14
+yes
+Kiryat Hayim
+06:22
+yes
+Kiryat Motzkin
+06:25
+yes
+Ako
+06:35
 no
 1
 Kriat Tivon
@@ -24,6 +651,177 @@ Shoham
 no
 1
 Modiin
+17:00
+Tel Aviv-Hagana
+18:00
+no
+1
+Shoham
+16:00
+Rishon Letzyon
+17:00
+yes
+Lod
+16:10
+yes
+Ramla
+16:20
+yes
+Rehovot
+16:40
+no
+1
+Shoham
+18:00
+Rishon Letzyon
+19:00
+yes
+Lod
+18:10
+yes
+Ramla
+18:20
+yes
+Rehovot
+18:40
+no
+1
+Shoham
+14:00
+Rishon Letzyon
+15:00
+yes
+Lod
+14:10
+yes
+Ramla
+14:20
+yes
+Rehovot
+14:40
+no
+1
+Ashdod
+15:20
+Tel Aviv-University
+16:20
+yes
+Nir Galim
+15:25
+yes
+Rishon Letzyon
+15:40
+yes
+Bat Yam
+15:55
+yes
+Tel Aviv-Savidor
+16:10
+no
+1
+Ashdod
+07:00
+Tel Aviv-University
+08:10
+yes
+Nir Galim
+07:15
+yes
+Rishon Letzyon
+07:40
+yes
+Bat Yam
+07:55
+yes
+Tel Aviv-Savidor
+08:00
+no
+1
+Ashdod
+12:00
+Tel Aviv-University
+12:50
+yes
+Nir Galim
+12:05
+yes
+Rishon Letzyon
+12:20
+yes
+Bat Yam
+12:25
+yes
+Tel Aviv-Savidor
+12:40
+no
+1
+Ashdod
+20:20
+Tel Aviv-University
+21:20
+yes
+Nir Galim
+20:25
+yes
+Rishon Letzyon
+20:40
+yes
+Bat Yam
+20:55
+yes
+Tel Aviv-Savidor
+21:10
+no
+1
+Modiin
+07:00
+Rehovot
+07:30
+yes
+Lod
+07:15
+yes
+Ramla
+07:20
+no
+1
+Modiin
+09:00
+Rehovot
+09:30
+yes
+Lod
+09:15
+yes
+Ramla
+09:20
+no
+1
+Modiin
+11:00
+Rehovot
+11:30
+yes
+Lod
+11:15
+yes
+Ramla
+11:20
+no
+1
+Modiin
+19:00
+Rehovot
+19:30
+yes
+Lod
+19:15
+yes
+Ramla
+19:20
+no
+1
+Modiin
 05:40
 Kriat Gat
 09:04
@@ -31,7 +829,7 @@ yes
 Lod
 06:14
 yes
-Ramle
+Ramla
 06:55
 yes
 Ashdod
@@ -39,6 +837,24 @@ Ashdod
 yes
 Rehovot
 08:49
+no
+1
+Modiin
+10:00
+Kriat Gat
+11:10
+yes
+Lod
+10:14
+yes
+Ramla
+10:20
+yes
+Ashdod
+10:50
+yes
+Rehovot
+11:00
 no
 99999
 1
