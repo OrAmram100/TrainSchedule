@@ -24,20 +24,6 @@ public class RidesTest implements CallToMethod {
 			sb.append(ride + "\n");
 		}
 		sb.append("\n");
-		while (Tscan.hasNext()) {
-			String ride = Tscan.nextLine();
-			if (ride.equals(" "))
-				break;
-			sb.append(ride + "\n");
-		}
-		sb.append("\n");
-		while (Tscan.hasNext()) {
-			String ride = Tscan.nextLine();
-			if (ride.equals(" "))
-				break;
-			sb.append(ride + "\n");
-		}
-		sb.append("\n");
 		RidesManagement.resetRideList();
 		CallToMethod.RmCheck();
 		assertEquals(sb.toString(), RidesManagement.stringRides().toString());
@@ -52,26 +38,10 @@ public class RidesTest implements CallToMethod {
 
 		while (Tscan.hasNext()) {
 			String ride = Tscan.nextLine();
-			if (ride.equals(" "))
-				break;
 			sb.append(ride + "\n");
 		}
 		sb.append("\n");
-		while (Tscan.hasNext()) {
-			String ride = Tscan.nextLine();
-			if (ride.equals(" "))
-				break;
-			sb.append(ride + "\n");
-		}
-		sb.append("\n");
-		while (Tscan.hasNext()) {
-			String ride = Tscan.nextLine();
-			if (ride.equals(" "))
-				break;
-			sb.append(ride + "\n");
-		}
 		CallToMethod.RmCheck();
-		sb.append("\n");
 		assertEquals(sb.toString(), RidesManagement.sortAll().toString());
 		Tscan.close();
 

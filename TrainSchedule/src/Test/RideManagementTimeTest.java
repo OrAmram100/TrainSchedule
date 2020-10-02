@@ -26,7 +26,6 @@ public class RideManagementTimeTest implements CallToMethod {
 			int THour = Tscan.nextInt();
 			int TMin = Tscan.nextInt();
 			TestleaviningTime.add(new clockTrain(THour, TMin));
-			Tscan.nextLine();
 		}
 
 		assertEquals(TestleaviningTime.toString(), RidesManagement.getLeaviningTime().toString());
@@ -45,7 +44,6 @@ public class RideManagementTimeTest implements CallToMethod {
 			int THour = Tscan.nextInt();
 			int TMin = Tscan.nextInt();
 			TestArraivalTime.add(new clockTrain(THour, TMin));
-			Tscan.nextLine();
 		}
 		CallToMethod.RmCheck();
 		assertEquals(TestArraivalTime.toString(), RidesManagement.getDestiniationTime().toString());
