@@ -1,20 +1,366 @@
+Origin: Ako - 05:00. 
+Stop-stations on the way:
+Kiryat Motzkin - 05:05
+Kiryat Hayim - 05:08
+Haifa Center-Hashmona - 05:25
+Haifa-Bat Galim - 05:30
+Destination: Haifa-Hof Hakarmel - 05:36
+
+Origin: Ofakim - 05:09. 
+Stop-stations on the way:
+Netivot - 05:17
+Sderot - 05:27
+Ashkelon - 05:42
+Ashdod - 05:57
+Yavne-West - 06:12
+Rishon Letzyon - 06:23
+Bat Yam - 06:30
+Holon - 06:40
+Tel Aviv-HaHagana - 06:43
+Tel Aviv-Hashalom - 06:49
+Tel Aviv-Savidor - 07:00
+Destination: Tel Aviv-University - 07:04
+
+Origin: Modiin - 05:18. 
+Stop-stations on the way:
+Tel Aviv-HaHagana - 05:47
+Tel Aviv-Hashalom - 05:51
+Tel Aviv-Savidor - 05:58
+Destination: Tel Aviv-University - 06:01
+
+Origin: Binyamina - 05:40. 
+Stop-stations on the way:
+Atlit - 05:46
+Haifa-Hof Hakarmel - 05:55
+Haifa-Bat Galim - 06:02
+Hamifras Central Station - 06:14
+Kiryat Hayim - 06:22
+Kiryat Motzkin - 06:25
+Ako - 06:35
+Destination: Nahariya - 06:46
+
 Origin: Modiin - 05:40. 
 Stop-stations on the way:
 Lod - 06:14
-Ramle - 06:55
+Ramla - 06:55
 Ashdod - 08:30
 Rehovot - 08:49
 Destination: Kriat Gat - 09:04
- 
+
+Origin: Ashkelon - 05:58. 
+Stop-stations on the way:
+Ashdod - 06:11
+Yavne - 06:24
+Rehovot - 06:32
+Lod - 06:42
+Kfar Habad - 06:50
+Tel Aviv-Hagana - 06:59
+Tel Aviv-Hashalom - 07:04
+Tel Aviv-Savidor - 07:10
+Destination: Tel Aviv-University - 07:13
+
+Origin: Ahihud - 06:00. 
+Stop-stations on the way:
+Kiryat Motzkin - 06:19
+Hamifrats - 06:26
+Haifa-Bat Galim - 06:39
+Haifa-Hof Hakarmel - 06:45
+Hadera-West - 07:09
+Tel Aviv-University - 07:30
+Destination: Tel Aviv-Savidor - 07:35
+
+Origin: Binyamina - 06:30. 
+Stop-stations on the way:
+Haifa-Hof Hakarmel - 06:49
+Haifa-Bat Galim - 06:56
+Hamifrats - 07:08
+Kiryat Hayim - 07:17
+Kiryat Motzkin - 07:20
+Ako - 07:29
+Destination: Nahariya - 07:39
+
+Origin: Ashdod - 07:00. 
+Stop-stations on the way:
+Nir Galim - 07:15
+Rishon Letzyon - 07:40
+Bat Yam - 07:55
+Tel Aviv-Savidor - 08:00
+Destination: Tel Aviv-University - 08:10
+
+Origin: Modiin - 07:00. 
+Stop-stations on the way:
+Lod - 07:15
+Ramla - 07:20
+Destination: Rehovot - 07:30
+
+Origin: Haifa - 08:00. 
+Stop-stations on the way:
+Tel Aviv-Hashalom - 08:38
+Tel Aviv-HaHagana - 08:43
+Destination: Be'er Sheva-North-University - 11:10
+
+Origin: Haifa - 08:12. 
+Stop-stations on the way:
+Tel Aviv-Hashalom - 08:40
+Tel Aviv-HaHagana - 09:00
+Destination: Be'er Sheva-North-University - 10:50
+
+Origin: Ahihud - 09:00. 
+Stop-stations on the way:
+Kiryat Motzkin - 09:19
+Hamifrats - 09:26
+Haifa-Bat Galim - 09:39
+Haifa-Hof Hakarmel - 09:45
+Hadera-West - 10:09
+Tel Aviv-University - 10:30
+Destination: Tel Aviv-Savidor - 10:35
+
+Origin: Modiin - 09:00. 
+Stop-stations on the way:
+Lod - 09:15
+Ramla - 09:20
+Destination: Rehovot - 09:30
+
 Origin: Kriat Tivon - 09:20. 
 Stop-stations on the way:
 Shoham - 09:40
 Hana Sensh - 11:40
 Destination: Jerusalem - Yitzhak Navon - 13:48
- 
+
+Origin: Ashkelon - 10:00. 
+Stop-stations on the way:
+Ashdod - 10:11
+Yavne - 10:24
+Rehovot - 10:32
+Lod - 10:42
+Kfar Habad - 10:52
+Tel Aviv-Hagana - 10:59
+Tel Aviv-Hashalom - 11:05
+Tel Aviv-Savidor - 11:10
+Destination: Tel Aviv-University - 11:15
+
+Origin: Modiin - 10:00. 
+Stop-stations on the way:
+Lod - 10:14
+Ramla - 10:20
+Ashdod - 10:50
+Rehovot - 11:00
+Destination: Kriat Gat - 11:10
+
+Origin: Ofakim - 11:00. 
+Stop-stations on the way:
+Netivot - 11:17
+Sderot - 11:27
+Ashkelon - 11:42
+Ashdod - 11:57
+Yavne-West - 12:12
+Rishon Letzyon - 12:23
+Bat Yam - 12:30
+Holon - 12:40
+Tel Aviv-HaHagana - 12:43
+Tel Aviv-Hashalom - 12:49
+Tel Aviv-Savidor - 13:00
+Destination: Tel Aviv-University - 13:04
+
+Origin: Modiin - 11:00. 
+Stop-stations on the way:
+Tel Aviv-Savidor - 11:35
+Tel Aviv-Hashalom - 11:40
+Tel Aviv-HaHagana - 11:45
+Destination: Tel Aviv-University - 11:50
+
+Origin: Ahihud - 11:00. 
+Stop-stations on the way:
+Kiryat Motzkin - 11:19
+Hamifrats - 11:26
+Haifa-Bat Galim - 11:39
+Haifa-Hof Hakarmel - 11:45
+Hadera-West - 12:09
+Tel Aviv-University - 12:30
+Destination: Tel Aviv-Savidor - 12:35
+
+Origin: Modiin - 11:00. 
+Stop-stations on the way:
+Lod - 11:15
+Ramla - 11:20
+Destination: Rehovot - 11:30
+
+Origin: Ashkelon - 12:00. 
+Stop-stations on the way:
+Ashdod - 12:11
+Yavne - 12:24
+Rehovot - 12:32
+Lod - 12:42
+Kfar Habad - 12:50
+Tel Aviv-Hagana - 12:59
+Tel Aviv-Hashalom - 13:04
+Tel Aviv-Savidor - 13:10
+Destination: Tel Aviv-University - 13:15
+
+Origin: Ashdod - 12:00. 
+Stop-stations on the way:
+Nir Galim - 12:05
+Rishon Letzyon - 12:20
+Bat Yam - 12:25
+Tel Aviv-Savidor - 12:40
+Destination: Tel Aviv-University - 12:50
+
+Origin: Shoham - 14:00. 
+Stop-stations on the way:
+Lod - 14:10
+Ramla - 14:20
+Rehovot - 14:40
+Destination: Rishon Letzyon - 15:00
+
+Origin: Ashdod - 15:20. 
+Stop-stations on the way:
+Nir Galim - 15:25
+Rishon Letzyon - 15:40
+Bat Yam - 15:55
+Tel Aviv-Savidor - 16:10
+Destination: Tel Aviv-University - 16:20
+
+Origin: Shoham - 16:00. 
+Stop-stations on the way:
+Lod - 16:10
+Ramla - 16:20
+Rehovot - 16:40
+Destination: Rishon Letzyon - 17:00
+
 Origin: Haifa - 16:12. 
 Stop-stations on the way:
 Tel Aviv-HaHagana - 17:12
 Tel Aviv-Hashalom - 17:40
-Destination: Be'er Sheva-North/University - 18:50
- 
+Destination: Be'er Sheva-North-University - 18:50
+
+Origin: Modiin - 17:00. 
+Destination: Tel Aviv-Hagana - 18:00
+
+Origin: Ofakim - 17:09. 
+Stop-stations on the way:
+Netivot - 17:17
+Sderot - 17:27
+Ashkelon - 17:42
+Ashdod - 17:57
+Yavne-West - 18:12
+Rishon Letzyon - 18:23
+Bat Yam - 18:30
+Holon - 18:40
+Tel Aviv-HaHagana - 18:43
+Tel Aviv-Hashalom - 18:49
+Tel Aviv-Savidor - 19:00
+Destination: Tel Aviv-University - 19:04
+
+Origin: Haifa - 17:12. 
+Stop-stations on the way:
+Tel Aviv-HaHagana - 18:12
+Tel Aviv-Hashalom - 18:40
+Destination: Be'er Sheva-North-University - 19:50
+
+Origin: Modiin - 17:18. 
+Stop-stations on the way:
+Tel Aviv-HaHagana - 17:47
+Tel Aviv-Hashalom - 17:51
+Tel Aviv-Savidor - 17:58
+Destination: Tel Aviv-University - 18:01
+
+Origin: Ashkelon - 17:58. 
+Stop-stations on the way:
+Ashdod - 18:11
+Yavne - 18:24
+Rehovot - 18:32
+Lod - 18:42
+Kfar Habad - 18:50
+Tel Aviv-Hagana - 18:59
+Tel Aviv-Hashalom - 19:04
+Tel Aviv-Savidor - 19:10
+Destination: Tel Aviv-University - 19:13
+
+Origin: Ako - 18:00. 
+Stop-stations on the way:
+Kiryat Motzkin - 18:05
+Kiryat Hayim - 18:08
+Haifa Center-Hashmona - 18:25
+Haifa-Bat Galim - 18:30
+Destination: Haifa-Hof Hakarmel - 18:36
+
+Origin: Shoham - 18:00. 
+Stop-stations on the way:
+Lod - 18:10
+Ramla - 18:20
+Rehovot - 18:40
+Destination: Rishon Letzyon - 19:00
+
+Origin: Binyamina - 18:30. 
+Stop-stations on the way:
+Haifa-Hof Hakarmel - 18:49
+Haifa-Bat Galim - 18:56
+Hamifrats - 19:08
+Kiryat Hayim - 19:08
+Kiryat Motzkin - 19:20
+Ako - 19:29
+Destination: Nahariya - 19:39
+
+Origin: Ofakim - 19:00. 
+Stop-stations on the way:
+Netivot - 19:17
+Sderot - 19:27
+Ashkelon - 19:42
+Ashdod - 19:57
+Yavne-West - 20:12
+Rishon Letzyon - 20:25
+Bat Yam - 20:30
+Holon - 20:40
+Tel Aviv-HaHagana - 20:42
+Tel Aviv-Hashalom - 20:49
+Tel Aviv-Savidor - 21:00
+Destination: Tel Aviv-University - 21:05
+
+Origin: Ahihud - 19:00. 
+Stop-stations on the way:
+Kiryat Motzkin - 19:19
+Hamifrats - 19:26
+Haifa-Bat Galim - 19:39
+Haifa-Hof Hakarmel - 19:45
+Hadera-West - 20:09
+Tel Aviv-University - 20:30
+Destination: Tel Aviv-Savidor - 20:35
+
+Origin: Modiin - 19:00. 
+Stop-stations on the way:
+Lod - 19:15
+Ramla - 19:20
+Destination: Rehovot - 19:30
+
+Origin: Ahihud - 20:00. 
+Stop-stations on the way:
+Kiryat Motzkin - 20:19
+Hamifrats - 20:26
+Haifa-Bat Galim - 20:39
+Haifa-Hof Hakarmel - 20:45
+Hadera-West - 21:09
+Tel Aviv-University - 21:30
+Destination: Tel Aviv-Savidor - 21:35
+
+Origin: Ashdod - 20:20. 
+Stop-stations on the way:
+Nir Galim - 20:25
+Rishon Letzyon - 20:40
+Bat Yam - 20:55
+Tel Aviv-Savidor - 21:10
+Destination: Tel Aviv-University - 21:20
+
+Origin: Ofakim - 21:00. 
+Stop-stations on the way:
+Netivot - 21:17
+Sderot - 21:27
+Ashkelon - 21:42
+Ashdod - 21:57
+Yavne-West - 22:12
+Rishon Letzyon - 22:23
+Bat Yam - 22:30
+Holon - 22:40
+Tel Aviv-HaHagana - 22:43
+Tel Aviv-Hashalom - 22:49
+Tel Aviv-Savidor - 23:00
+Destination: Tel Aviv-University - 23:05
