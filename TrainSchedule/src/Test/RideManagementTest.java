@@ -12,7 +12,7 @@ import org.junit.Test;
 import TrainSchedule.RidesManagement;
 import TrainSchedule.clockTrain;
 
-public class RideManagementTimeTest implements CallToMethod {
+public class RideManagementTest implements CallToMethod {
     
 	@Test
 	public void checkLeavingTimeTest() throws Exception {
@@ -27,7 +27,7 @@ public class RideManagementTimeTest implements CallToMethod {
 			int TMin = Tscan.nextInt();
 			TestleaviningTime.add(new clockTrain(THour, TMin));
 		}
-
+		
 		assertEquals(TestleaviningTime.toString(), RidesManagement.getLeaviningTime().toString());
 		Tscan.close();
 	}
@@ -45,9 +45,50 @@ public class RideManagementTimeTest implements CallToMethod {
 			int TMin = Tscan.nextInt();
 			TestArraivalTime.add(new clockTrain(THour, TMin));
 		}
-		CallToMethod.RmCheck();
+		RidesManagement.resetRideList();
+		CallToMethod.ReadInsertCheck();
 		assertEquals(TestArraivalTime.toString(), RidesManagement.getDestiniationTime().toString());
 		Tscan.close();
 	}
+	
+	@Test
+	public void LocateRide() throws Exception {
+			String des = "Tel Aviv-Hashalom";
+			String station = "Haifa";
+			int sHour = 7;
+			int sMin = 30;
+			String ridePlan = "Station Haifa --> Station Tel Aviv-Hashalom\n" + 
+					"\n" + 
+					"Railway  : \n" + 
+					"\n" + 
+					" The train will arraive to the destination at :08:38\n" + 
+					"Haifa - 08:00\n" + 
+					"Tel Aviv-Hashalom - 08:38\n" + 
+					"\n" + 
+					"Station Haifa --> Station Tel Aviv-Hashalom\n" + 
+					"\n" + 
+					"Railway  : \n" + 
+					"\n" + 
+					" The train will arraive to the destination at :08:40\n" + 
+					"Haifa - 08:12\n" + 
+					"Tel Aviv-Hashalom - 08:40\n" + 
+					"\n" + 
+					"Station Haifa --> Station Tel Aviv-Hashalom\n" + 
+					"\n" + 
+					"Railway  : \n" + 
+					"\n" + 
+					" The train will arraive to the destination at :17:40\n" + 
+					"Haifa - 16:12\n" + 
+					"Tel Aviv-HaHagana - 17:12\n" + 
+					"Tel Aviv-Hashalom - 17:40\n";
+			CallToMethod.ReadInsertCheck();
+			RidesManagement.sortAll();
+			assertEquals(ridePlan, RidesManagement.LocateRide(des, station, sHour, sMin));
+		}
 
-}
+	}
+
+
+
+
+

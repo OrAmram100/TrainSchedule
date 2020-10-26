@@ -12,7 +12,7 @@ public class UserMain implements IsearchRides {
 
 	public static void main(String[] args) throws Exception {
 		String out = new SimpleDateFormat("yyyy-MM-dd '.txt'").format(new Date());
-		File f = new File("/home/afeka/git/TrainSchedule/TrainSchedule/railWay " + out);
+		File f = new File("/home/gilad/Desktop/railWay " + out);
 		Scanner s = new Scanner(f);
 		RidesManagement.FiletoUserInsertion(s);
 		
