@@ -25,7 +25,7 @@ public class RidesTest implements CallToMethod {
 		}
 		sb.append("\n");
 		RidesManagement.resetRideList();
-		CallToMethod.RmCheck();
+		CallToMethod.ReadInsertCheck();
 		assertEquals(sb.toString(), RidesManagement.stringRides().toString());
 		Tscan.close();
 	}
@@ -41,7 +41,7 @@ public class RidesTest implements CallToMethod {
 			sb.append(ride + "\n");
 		}
 		sb.append("\n");
-		CallToMethod.RmCheck();
+		CallToMethod.ReadInsertCheck();
 		assertEquals(sb.toString(), RidesManagement.sortAll().toString());
 		Tscan.close();
 

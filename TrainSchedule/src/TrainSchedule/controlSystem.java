@@ -68,7 +68,7 @@ public class controlSystem implements IsearchRides {
 						isValid = false;
 					}
 				} while (!isValid);
-				IsearchRides.search(station, des, SHour, SMin);
+				System.out.println(IsearchRides.search(station, des, SHour, SMin));
 				
 				break;
 
