@@ -70,10 +70,12 @@ public class UserMain implements IsearchRides {
 					+ "background:transparent; width: 1000px;\" align=\"center\" cellspacing=\"5\"\">" + "<tbody>");
 			System.out.println("<tr style=\"height: 10px; background:transparent;\">");
 			System.out.println("<td style=\"text-align: left; width: 400px; height: 14px; color:#000000;\">");
+			System.out.println("<h5>");
 			for(int i=0; i < parts.length;i++) {
 				System.out.println(parts[i] );
 				System.out.println( "<\br>");
 			}
+			System.out.println("</h5>");
 			System.out.println("</td></tr>");
 			System.out.println("<tr style=\"height: 30px;\"><td></td></tr>");
 			System.out.println("</tbody></table></h2>");
