@@ -101,7 +101,7 @@ public class Ride {
 			else if(allStaions.size() >3) {
 				schedule.append("Stop-stations on the way:\n");
 			}
-			for (int i = 1; i < allStaions.size() - 1; i++) {
+			for (int i = 1; i < allStaions.size(); i++) {
 
 				schedule.append(allStaions.get(i).toString() + "\n");
 			}
