@@ -12,7 +12,7 @@ public class UserMain implements IsearchRides {
 
 	public static void main(String[] args) throws Exception {
 		String out = new SimpleDateFormat("yyyy-MM-dd '.txt'").format(new Date());
-		File f = new File("C:\\Users\\Administrator\\git\\TrainSchedule\\TrainSchedule\\railWay " + out);
+		File f = new File("/home/afeka/git/Desktop/railWay " + out);
 		Scanner s = new Scanner(f);
 		RidesManagement.FiletoUserInsertion(s);
 		
@@ -50,13 +50,13 @@ public class UserMain implements IsearchRides {
 					"<tr style=\"height: 30.05px;\">" + 
 					"<form action=\"{{ url_for(/rail) }}\" method=\"post\">" + // Correct PATH of Python code = working code
 					"<td style=\"width: 350px; height: 30px; text-align: center;\">" + 
-					"<input id=\"startStation\" name=\"startStation\" style=\"text-align: center;\" role=\"combobox\" autocomplete=\"off\" type=\"text\" aria-expanded=\"false\" aria-autocomplete=\"list\" value=\""+ args[1] + "\" aria-label=\"×‘×—×¨ ×ª×—× ×ª ×ž×•×¦×�\" /></td>" + 
+					"<input id=\"startStation\" name=\"startStation\" style=\"text-align: center;\" role=\"combobox\" autocomplete=\"off\" type=\"text\" aria-expanded=\"false\" aria-autocomplete=\"list\" value=\""+ args[1] + "\"/></td>" + 
 					"<td style=\"width: 350px; height: 30px; text-align: center;\">\n" + 
-					"<input id=\"finishStation\" name=\"finishStation\" style=\"text-align: center;\" role=\"combobox\" autocomplete=\"off\" type=\"text\" aria-expanded=\"false\" aria-autocomplete=\"list\" value=\""+ args[2] + "\" aria-label=\"×‘×—×¨ ×ª×—× ×ª ×™×¢×“\" /></td>" + 
+					"<input id=\"finishStation\" name=\"finishStation\" style=\"text-align: center;\" role=\"combobox\" autocomplete=\"off\" type=\"text\" aria-expanded=\"false\" aria-autocomplete=\"list\" value=\""+ args[2] + "\"/></td>" + 
 					"<td style=\"width: 100px;\" align=\"center\">\n" + 
-					"<input style=\"width: 100px;\" id=\"Hour\" name=\"Hour\" style=\"text-align: center;\" role=\"combobox\" autocomplete=\"off\" type=\"text\" aria-expanded=\"false\" aria-autocomplete=\"list\" value=\""+ args[3] + "\" aria-label=\"×–×ž× ×™×� ×©×¢×•×ª\"/></td>" + 
+					"<input style=\"width: 100px;\" id=\"Hour\" name=\"Hour\" style=\"text-align: center;\" role=\"combobox\" autocomplete=\"off\" type=\"text\" aria-expanded=\"false\" aria-autocomplete=\"list\" value=\""+ args[3] + "\"/></td>" + 
 					"<td style=\"width: 100px;\" align=\"left\">\n" + 
-					"<input style=\"width: 100px;\" id=\"minutes\" name=\"minutes\" style=\"text-align: center;\" role=\"combobox\" autocomplete=\"off\" type=\"text\" aria-expanded=\"false\" aria-autocomplete=\"list\" value=\""+ args[4] + "\" aria-label=\"×–×ž× ×™×� ×“×§×•×ª\" /></td>" + 
+					"<input style=\"width: 100px;\" id=\"minutes\" name=\"minutes\" style=\"text-align: center;\" role=\"combobox\" autocomplete=\"off\" type=\"text\" aria-expanded=\"false\" aria-autocomplete=\"list\" value=\""+ args[4] + "\"/></td>" + 
 					"</td>" + 
 					"</from>" + 
 					"<td style=\"width: 200px; height: 30px; text-align: center;\">" + 
