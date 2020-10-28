@@ -12,7 +12,7 @@ public class UserMain implements IsearchRides {
 
 	public static void main(String[] args) throws Exception {
 		String out = new SimpleDateFormat("yyyy-MM-dd '.txt'").format(new Date());
-		File f = new File("/home/afeka/git/TrainSchedule/TrainSchedule/railWay " + out);
+		File f = new File("C:\\Users\\Administrator\\git\\TrainSchedule\\TrainSchedule\\railWay " + out);
 		Scanner s = new Scanner(f);
 		RidesManagement.FiletoUserInsertion(s);
 		
@@ -26,6 +26,7 @@ public class UserMain implements IsearchRides {
 		if (!isHtml) {
 			System.out.println(route);
 		} else {
+			String [] parts = route.split("Station");
 			System.out.println("<html>");
 			System.out.println("<head>");
 			System.out.println("<title>");
@@ -49,13 +50,13 @@ public class UserMain implements IsearchRides {
 					"<tr style=\"height: 30.05px;\">" + 
 					"<form action=\"{{ url_for(/rail) }}\" method=\"post\">" + // Correct PATH of Python code = working code
 					"<td style=\"width: 350px; height: 30px; text-align: center;\">" + 
-					"<input id=\"startStation\" name=\"startStation\" style=\"text-align: center;\" role=\"combobox\" autocomplete=\"off\" type=\"text\" aria-expanded=\"false\" aria-autocomplete=\"list\" value=\""+ args[1] + "\" aria-label=\"בחר תחנת מוצא\" /></td>" + 
+					"<input id=\"startStation\" name=\"startStation\" style=\"text-align: center;\" role=\"combobox\" autocomplete=\"off\" type=\"text\" aria-expanded=\"false\" aria-autocomplete=\"list\" value=\""+ args[1] + "\" aria-label=\"×‘×—×¨ ×ª×—× ×ª ×ž×•×¦×�\" /></td>" + 
 					"<td style=\"width: 350px; height: 30px; text-align: center;\">\n" + 
-					"<input id=\"finishStation\" name=\"finishStation\" style=\"text-align: center;\" role=\"combobox\" autocomplete=\"off\" type=\"text\" aria-expanded=\"false\" aria-autocomplete=\"list\" value=\""+ args[2] + "\" aria-label=\"בחר תחנת יעד\" /></td>" + 
+					"<input id=\"finishStation\" name=\"finishStation\" style=\"text-align: center;\" role=\"combobox\" autocomplete=\"off\" type=\"text\" aria-expanded=\"false\" aria-autocomplete=\"list\" value=\""+ args[2] + "\" aria-label=\"×‘×—×¨ ×ª×—× ×ª ×™×¢×“\" /></td>" + 
 					"<td style=\"width: 100px;\" align=\"center\">\n" + 
-					"<input style=\"width: 100px;\" id=\"Hour\" name=\"Hour\" style=\"text-align: center;\" role=\"combobox\" autocomplete=\"off\" type=\"text\" aria-expanded=\"false\" aria-autocomplete=\"list\" value=\""+ args[3] + "\" aria-label=\"זמנים שעות\"/></td>" + 
+					"<input style=\"width: 100px;\" id=\"Hour\" name=\"Hour\" style=\"text-align: center;\" role=\"combobox\" autocomplete=\"off\" type=\"text\" aria-expanded=\"false\" aria-autocomplete=\"list\" value=\""+ args[3] + "\" aria-label=\"×–×ž× ×™×� ×©×¢×•×ª\"/></td>" + 
 					"<td style=\"width: 100px;\" align=\"left\">\n" + 
-					"<input style=\"width: 100px;\" id=\"minutes\" name=\"minutes\" style=\"text-align: center;\" role=\"combobox\" autocomplete=\"off\" type=\"text\" aria-expanded=\"false\" aria-autocomplete=\"list\" value=\""+ args[4] + "\" aria-label=\"זמנים דקות\" /></td>" + 
+					"<input style=\"width: 100px;\" id=\"minutes\" name=\"minutes\" style=\"text-align: center;\" role=\"combobox\" autocomplete=\"off\" type=\"text\" aria-expanded=\"false\" aria-autocomplete=\"list\" value=\""+ args[4] + "\" aria-label=\"×–×ž× ×™×� ×“×§×•×ª\" /></td>" + 
 					"</td>" + 
 					"</from>" + 
 					"<td style=\"width: 200px; height: 30px; text-align: center;\">" + 
@@ -69,7 +70,10 @@ public class UserMain implements IsearchRides {
 					+ "background:transparent; width: 1000px;\" align=\"center\" cellspacing=\"5\"\">" + "<tbody>");
 			System.out.println("<tr style=\"height: 10px; background:transparent;\">");
 			System.out.println("<td style=\"text-align: left; width: 400px; height: 14px; color:#000000;\">");
-			System.out.println(route);
+			for(int i=0; i < parts.length;i++) {
+				System.out.println(parts[i] );
+				System.out.println( "<\br>");
+			}
 			System.out.println("</td></tr>");
 			System.out.println("<tr style=\"height: 30px;\"><td></td></tr>");
 			System.out.println("</tbody></table></h2>");

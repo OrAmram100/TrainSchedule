@@ -272,7 +272,6 @@ public class RidesManagement {
 				leaviningTime.add(new clockTrain(OHour, OMin));
 				saveOrigin = Origin;
 				rideReady++;
-				userFile.nextLine();
 			}
 
 			if (checkInput.equalsIgnoreCase(interIndex)) {
@@ -297,8 +296,9 @@ public class RidesManagement {
 			}
 
 			if (rideReady == 2) {
-				numsOfStations = 0;
-				userFile.nextLine();
+				nextRide++;
+				if (nextRide > 1)
+					numOfRides++;
 				allRides.add(new Ride(saveOrigin, saveDes, destiniationTime.get(numOfRides),
 						leaviningTime.get(numsOfStations)));
 				Station newStation = new Station(saveOrigin, leaviningTime.get(numsOfStations));
@@ -306,11 +306,9 @@ public class RidesManagement {
 				allRides.get(numOfRides).addStation(newStation);
 				allRides.get(numOfRides).addStation(destinateStation);
 				numsOfStations++;
-				nextRide++;
-				if (nextRide > 1)
-					numOfRides++;
 				rideReady = 0;
 			}
+			userFile.nextLine();
 		}
 	}
 
