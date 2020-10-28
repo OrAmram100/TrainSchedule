@@ -202,17 +202,12 @@ public class RidesManagement {
 												.getMinute() >= sMin))) { // Compare by minute
 					for (int lastDes = startDes; lastDes < allRides.get(i).getAllStaions().size(); lastDes++) {
 						if (allRides.get(i).getAllStaions().get(lastDes).getName().equalsIgnoreCase(des)) {
-							route+= "Station " + allRides.get(i).getAllStaions().get(startDes).getName() + " --> Station "  + allRides.get(i).getAllStaions().get(lastDes).getName()+"\n\n";
-							route+= "Railway  : \n\n ";
-							route+= "The train will arraive to the destination at :"
-									+ allRides.get(i).getAllStaions().get(lastDes).getLeaviningTime() + "\n";
-							for (int midRide = startDes; midRide <= lastDes; midRide++) {
-								route += allRides.get(i).getAllStaions().get(midRide) + "\n";
-
-							}
-							if (maxRidesToSearch == 3) {
+							route+= "Main Route: " + allRides.get(i).getAllStaions().get(startDes).getName() + " --> "  + allRides.get(i).getAllStaions().get(lastDes).getName()+"\n\n";						
+							route+= "Full Time line: ";
+							for (int midRide = startDes; midRide <= lastDes; midRide++) 
+								route += "Station " + allRides.get(i).getAllStaions().get(midRide) + "\n";
+							if (maxRidesToSearch == 3) 
 								return route;
-							}
 							route+="\n";
 							maxRidesToSearch++;
 						}
@@ -231,7 +226,7 @@ public class RidesManagement {
 			pw.print("Origin" + "\n");
 			allRides.get(i).save(pw);
 		}
-		pw.print("End");
+		pw.print("");
 		System.out.println("Save completed");
 		pw.close();
 	}
